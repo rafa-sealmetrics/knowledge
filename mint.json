@@ -107,11 +107,7 @@
     "linkedin": "https://linkedin.com/company/sealmetrics",
     "github": "https://github.com/sealmetrics"
   },
-  "analytics": {
-    "sealmetrics": {
-      "projectId": "your-project-id"
-    }
-  },
+
   "seo": {
     "indexHiddenPages": false
   },
