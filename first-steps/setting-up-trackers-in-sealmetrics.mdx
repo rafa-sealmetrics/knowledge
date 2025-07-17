@@ -1,0 +1,78 @@
+---
+title: "Setting Up Trackers in Sealmetrics"
+description: "Description of your new file."
+---
+
+To ensure accurate data collection with Sealmetrics, you can easily set up different types of trackers for your site. Please follow these steps to set up the right tracker for your needs.
+
+![1 Pn](/images/1.png)
+
+## **Step 1: Accessing the Tracker Configuration**
+
+1. **Navigate to Your Dashboard**: Log in to your Sealmetrics account, where you'll see the main dashboard displaying KPIs, including entrances, page views, conversions, revenue, and microconversions.
+2. **Go to Account Settings**: In the top right corner, locate the settings icon (indicated with the gear icon).
+
+## **Step 2: Accessing Tags & Connectors**
+
+1. **Open the Settings Dropdown**: Click on the settings icon. A dropdown menu will appear with several options.
+2. **Select “Tags & Connectors”**: In this menu, hover over **Tags & Connectors** to reveal additional tracking options.
+
+## **Step 3: Choosing Your Tracker Type**
+
+1. **Select a Tracker**: Under **Tags & Connectors**, you’ll see a list of available tracker options:
+   - **Global Tracker (Beta)**: This is Sealmetrics' primary tracker, suitable for broad data capture.
+   - **Super Privacy Tracker**: For enhanced privacy needs, this tracker minimizes data collection to only what’s essential.
+   - **1st Party Tracker**: Designed to work with first-party data, ensuring full compliance with privacy regulations.
+   - **Connectors**: Choose this if you must integrate Sealmetrics with other tools or platforms.
+2. **Install the Tracker**: Once you select your preferred tracker, you’ll be provided with specific setup instructions. Follow these instructions to complete the integration on your site.
+
+## **Step 4: Go to Global Tracker**
+
+## **Step 5: Download Global Tracker pixel**
+
+Add the pageview pixel to all the pages on your website.
+
+![2 Pn](/images/2.png)
+
+## **Step 6: Set up Conversion Pixel**
+
+![3 Pn](/images/3.png)
+
+1. Select Conversion.
+2. Enter a name for this conversion.
+3. Would you like to add a value to this conversion?
+4. If you click "Yes," you must add the Revenue Variable or a fixed value in this field.
+5. Save. You can copy and paste the code in your GTM, but by saving it, you can retrieve this pixel in the future and gain valuable information, such as when the pixel was last triggered.
+6. Ignore page view?
+
+![4 Pn](/images/4.png)
+
+### **When do you choose Ignore page view?**
+
+When you'd like to track events that doesn't launch a page view. For example:
+
+- Scroll downs.
+- Click on buttons.
+- Track when I cookie consent banner is shown
+
+**When you should use 'Ignore page view' = No?**
+
+When you'd like to track events that launch a page view. For example:
+
+1. Add to carts
+2. Begin Checkout
+3. Thank you pages
+
+This code must be triggered when the conversion is done.
+
+Here you'll find how to do that with Google Tag Manager:
+
+As you can see in the image, the pixel is triggered in "All Pages" (#1) except when a conversion is "Done" (#2)
+
+![6 Pn](/images/6.png)
+
+## **Step 7: Set up the Sales Funnel (optional)**
+
+Follow these steps, and you'll be able to create your custom sales funnel.
+
+![7 Pn](/images/7.png)
