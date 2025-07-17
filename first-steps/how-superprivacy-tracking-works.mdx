@@ -1,0 +1,53 @@
+---
+title: "How SuperPrivacy Tracking Works"
+---
+
+SealMetrics focuses on key information to generate valuable reports for marketers, helping them make informed decisions. The data points we consider include: 
+
+- Common user agent
+- Timestamp
+- URL
+- Referral URL
+
+SealMetrics tracks "hits" rather than individual journeys or paths, ensuring compliance with the ePrivacy Directive. For example, if 25 people are on your site, SEALMetrics needs to understand how your visitors navigate your site. We track this data in an aggregated manner.\
+​
+
+SealMetrics works with a JavaScript embedded in your website:
+
+## **SealMetrics tracker code:**
+
+```
+<script> /* SealMetrics Tracker Code */ var oSm = window.oSm || {}; oSm.account = '000000000000000000001234'; oSm.event = 'pageview'; oSm.decore = 1; !function(e){var t="//app.sealmetrics.com/tag/tracker";window.oSm=oSm,window.smTrackerLoaded?sm.tracker.track(e.event):Promise.all([new Promise(function(e){var n=document.createElement("script");n.src=t,n.async=!0,n.onload=function(){e(t)},document.getElementsByTagName("head")[0].appendChild(n)})]).then(function(){sm.tracker.track(e.event)})}(oSm); /* End SealMetrics Tracker Code */ </script>
+```
+
+This pixel must be added to all your pages.
+
+On the other hand, you can add an event code to count micro conversions and conversions.
+
+## **Event Tracker Code:**
+
+```
+<script> /* SealMetrics Tracker Code */ var oSm = window.oSm || {}; oSm.decore = 1; oSm.event = 'conversion'; !function(e){var t="//app.sealmetrics.com/tag/tracker";window.oSm=oSm,window.smTrackerLoaded?sm.tracker.track(e.event):Promise.all([new Promise(function(e){var n=document.createElement("script");n.src=t,n.async=!0,n.onload=function(){e(t)},document.getElementsByTagName("head")[0].appendChild(n)})]).then(function(){sm.tracker.track(e.event)})}(oSm); /* End SealMetrics Tracker Code */ </script>
+```
+
+You can add as many parameters as needed, such as postal code or city, by following our wizard while always respecting privacy regulations.\
+​
+
+SealMetrics begins tracking in real-time as soon as the pixels are added.\
+​
+
+SealMetrics counts every page view in an aggregated way. We do not track individual or anonymized journeys; only page views (hits) are tracked.\
+​
+
+We've made significant efforts to understand why our clients choose to work with us. Here are their responses:
+
+- **You will track 100% of your traffic, conversions, and revenue.**
+- **You will see 100% of your conversions, events, and revenue by source, medium, campaign, and term.** This is our standout feature.
+
+Thanks to our isolated click tracking system and our Source-ID technology (which, I’d like to emphasize, does not track users individually but in aggregated data), we can assign conversions to sources while remaining GDPR and ePrivacy compliant.​
+
+## **Strictly Legal Tech**
+
+Our clients want to avoid legal or future legal issues. SealMetrics is fully compliant with current regulations and even anticipates future directives.
+
+Once a conversion is completed, the conversion pixel is triggered, allowing SealMetrics to count another conversion.
