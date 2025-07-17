@@ -1,0 +1,20 @@
+{
+  "name": "Sealmetrics Knowledge Base",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#tu-color-principal",
+    "light": "#tu-color-secundario",
+    "dark": "#tu-color-oscuro"
+  },
+  "topbarLinks": [
+    {
+      "name": "Sealmetrics",
+      "url": "https://sealmetrics.com"
+    }
+  ],
+  "domain": "knowledge.sealmetrics.com"
+}
