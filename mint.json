@@ -1,5 +1,5 @@
 {
-  "name": "Sealmetrics Knowledge Base",
+  "name": "Sealmetrics Knowledge Hub",
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
@@ -14,30 +14,148 @@
     {
       "name": "Sealmetrics",
       "url": "https://sealmetrics.com"
+    },
+    {
+      "name": "App",
+      "url": "https://app.sealmetrics.com"
+    }
+  ],
+  "tabs": [
+    {
+      "name": "Documentation",
+      "url": "docs"
+    },
+    {
+      "name": "API Reference",
+      "url": "api"
+    },
+    {
+      "name": "Academy",
+      "url": "academy"
+    },
+    {
+      "name": "Resources",
+      "url": "resources"
     }
   ],
   "domain": "knowledge.sealmetrics.com",
   "navigation": [
     {
-      "group": "Getting Started",
+      "group": "🚀 Getting Started",
       "pages": [
         "introduction",
-        "quickstart"
+        "what-is-sealmetrics",
+        "quickstart",
+        "first-steps",
+        "migration-guide"
       ]
     },
     {
-      "group": "Implementation",
+      "group": "📋 First Steps (de tu estructura actual)",
       "pages": [
-        "implementation/setup",
-        "implementation/configuration"
+        "first-steps/account-setup",
+        "first-steps/installation",
+        "first-steps/verification",
+        "first-steps/dashboard-tour",
+        "first-steps/first-data",
+        "first-steps/team-setup",
+        "first-steps/privacy-settings",
+        "first-steps/tracking-validation",
+        "first-steps/goals-setup"
       ]
     },
     {
-      "group": "API Reference",
+      "group": "⚙️ Features (expandida)",
       "pages": [
-        "api-reference/overview",
-        "api-reference/endpoints"
+        "features/overview",
+        "features/real-time-analytics",
+        "features/consentless-tracking",
+        "features/event-tracking",
+        "features/conversion-tracking",
+        "features/custom-dimensions",
+        "features/segmentation",
+        "features/funnel-analysis",
+        "features/cohort-analysis",
+        "features/attribution-modeling",
+        "features/privacy-dashboard",
+        "features/data-export"
       ]
+    },
+    {
+      "group": "🖥️ Platform (mejorada)",
+      "pages": [
+        "platform/dashboard-overview",
+        "platform/reports",
+        "platform/filters",
+        "platform/custom-reports",
+        "platform/alerts",
+        "platform/data-management",
+        "platform/user-management",
+        "platform/integrations",
+        "platform/settings",
+        "platform/mobile-app",
+        "platform/bulk-operations",
+        "platform/automation",
+        "platform/workflows",
+        "platform/notifications",
+        "platform/backup-restore",
+        "platform/performance-optimization",
+        "platform/troubleshooting",
+        "platform/advanced-configuration",
+        "platform/white-labeling",
+        "platform/multi-domain",
+        "platform/data-retention",
+        "platform/security-settings",
+        "platform/compliance-tools",
+        "platform/audit-logs"
+      ]
+    },
+    {
+      "group": "📊 Metric Insights (expandida)",
+      "pages": [
+        "metrics/overview",
+        "metrics/traffic-analytics",
+        "metrics/user-behavior",
+        "metrics/conversion-metrics",
+        "metrics/engagement-metrics",
+        "metrics/performance-metrics",
+        "metrics/privacy-metrics",
+        "metrics/business-intelligence",
+        "metrics/predictive-analytics",
+        "metrics/benchmarking",
+        "metrics/roi-analysis",
+        "metrics/customer-lifetime-value",
+        "metrics/retention-analysis",
+        "metrics/acquisition-metrics",
+        "metrics/content-analytics",
+        "metrics/ecommerce-analytics",
+        "metrics/saas-metrics",
+        "metrics/mobile-analytics",
+        "metrics/social-analytics",
+        "metrics/email-analytics"
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Documentation",
+      "icon": "book-open",
+      "url": "docs"
+    },
+    {
+      "name": "API Reference",
+      "icon": "code",
+      "url": "api"
+    },
+    {
+      "name": "Academy",
+      "icon": "graduation-cap",
+      "url": "academy"
+    },
+    {
+      "name": "Resources",
+      "icon": "folder-open",
+      "url": "resources"
     }
   ]
 }
