@@ -4,7 +4,7 @@
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
     "primary": "#0066cc",
     "light": "#3399ff",
@@ -20,24 +20,10 @@
       "url": "https://app.sealmetrics.com"
     }
   ],
-  "tabs": [
-    {
-      "name": "Documentation",
-      "url": "docs"
-    },
-    {
-      "name": "API Reference",
-      "url": "api"
-    },
-    {
-      "name": "Academy",
-      "url": "academy"
-    },
-    {
-      "name": "Resources",
-      "url": "resources"
-    }
-  ],
+  "topbarCtaButton": {
+    "name": "Start Free Trial",
+    "url": "https://sealmetrics.com/signup"
+  },
   "domain": "knowledge.sealmetrics.com",
   "navigation": [
     {
@@ -45,17 +31,15 @@
       "pages": [
         "introduction",
         "what-is-sealmetrics",
-        "quickstart",
-        "first-steps",
-        "migration-guide"
+        "quickstart"
       ]
     },
     {
-      "group": "📋 First Steps (de tu estructura actual)",
+      "group": "📋 First Steps",
       "pages": [
         "first-steps/account-setup",
         "first-steps/installation",
-        "first-steps/verification",
+        "first-steps/verification", 
         "first-steps/dashboard-tour",
         "first-steps/first-data",
         "first-steps/team-setup",
@@ -65,97 +49,73 @@
       ]
     },
     {
-      "group": "⚙️ Features (expandida)",
+      "group": "⚙️ Features",
       "pages": [
         "features/overview",
         "features/real-time-analytics",
         "features/consentless-tracking",
         "features/event-tracking",
-        "features/conversion-tracking",
-        "features/custom-dimensions",
-        "features/segmentation",
-        "features/funnel-analysis",
-        "features/cohort-analysis",
-        "features/attribution-modeling",
-        "features/privacy-dashboard",
-        "features/data-export"
+        "features/conversion-tracking"
       ]
     },
     {
-      "group": "🖥️ Platform (mejorada)",
+      "group": "🖥️ Platform", 
       "pages": [
         "platform/dashboard-overview",
         "platform/reports",
         "platform/filters",
-        "platform/custom-reports",
-        "platform/alerts",
-        "platform/data-management",
-        "platform/user-management",
-        "platform/integrations",
-        "platform/settings",
-        "platform/mobile-app",
-        "platform/bulk-operations",
-        "platform/automation",
-        "platform/workflows",
-        "platform/notifications",
-        "platform/backup-restore",
-        "platform/performance-optimization",
-        "platform/troubleshooting",
-        "platform/advanced-configuration",
-        "platform/white-labeling",
-        "platform/multi-domain",
-        "platform/data-retention",
-        "platform/security-settings",
-        "platform/compliance-tools",
-        "platform/audit-logs"
+        "platform/integrations"
       ]
     },
     {
-      "group": "📊 Metric Insights (expandida)",
+      "group": "📊 Metric Insights",
       "pages": [
         "metrics/overview",
         "metrics/traffic-analytics",
         "metrics/user-behavior",
-        "metrics/conversion-metrics",
-        "metrics/engagement-metrics",
-        "metrics/performance-metrics",
-        "metrics/privacy-metrics",
-        "metrics/business-intelligence",
-        "metrics/predictive-analytics",
-        "metrics/benchmarking",
-        "metrics/roi-analysis",
-        "metrics/customer-lifetime-value",
-        "metrics/retention-analysis",
-        "metrics/acquisition-metrics",
-        "metrics/content-analytics",
-        "metrics/ecommerce-analytics",
-        "metrics/saas-metrics",
-        "metrics/mobile-analytics",
-        "metrics/social-analytics",
-        "metrics/email-analytics"
+        "metrics/conversion-metrics"
+      ]
+    },
+    {
+      "group": "⚖️ Legal & Compliance",
+      "pages": [
+        "legal/gdpr-compliance",
+        "legal/privacy-policy",
+        "legal/data-processing"
+      ]
+    },
+    {
+      "group": "🏢 Company",
+      "pages": [
+        "company/about-us",
+        "company/contact",
+        "company/support"
+      ]
+    },
+    {
+      "group": "🔌 API Documentation",
+      "pages": [
+        "api/overview",
+        "api/authentication",
+        "api/endpoints",
+        "api/examples"
       ]
     }
   ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open",
-      "url": "docs"
-    },
-    {
-      "name": "API Reference",
-      "icon": "code",
-      "url": "api"
-    },
-    {
-      "name": "Academy",
-      "icon": "graduation-cap",
-      "url": "academy"
-    },
-    {
-      "name": "Resources",
-      "icon": "folder-open",
-      "url": "resources"
+  "footerSocials": {
+    "twitter": "https://twitter.com/sealmetrics",
+    "linkedin": "https://linkedin.com/company/sealmetrics",
+    "github": "https://github.com/sealmetrics"
+  },
+  "analytics": {
+    "sealmetrics": {
+      "projectId": "your-project-id"
     }
-  ]
+  },
+  "seo": {
+    "indexHiddenPages": false
+  },
+  "search": {
+    "prompt": "Search Sealmetrics documentation..."
+  }
 }
