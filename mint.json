@@ -6,9 +6,9 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#tu-color-principal",
-    "light": "#tu-color-secundario",
-    "dark": "#tu-color-oscuro"
+    "primary": "#0066cc",
+    "light": "#3399ff",
+    "dark": "#004499"
   },
   "topbarLinks": [
     {
@@ -16,5 +16,28 @@
       "url": "https://sealmetrics.com"
     }
   ],
-  "domain": "knowledge.sealmetrics.com"
+  "domain": "knowledge.sealmetrics.com",
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "quickstart"
+      ]
+    },
+    {
+      "group": "Implementation",
+      "pages": [
+        "implementation/setup",
+        "implementation/configuration"
+      ]
+    },
+    {
+      "group": "API Reference",
+      "pages": [
+        "api-reference/overview",
+        "api-reference/endpoints"
+      ]
+    }
+  ]
 }
