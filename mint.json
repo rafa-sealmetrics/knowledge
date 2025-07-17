@@ -107,11 +107,14 @@
     "linkedin": "https://linkedin.com/company/sealmetrics",
     "github": "https://github.com/sealmetrics"
   },
-
   "seo": {
     "indexHiddenPages": false
   },
   "search": {
     "prompt": "Search Sealmetrics documentation..."
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
   }
 }
