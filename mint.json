@@ -22,7 +22,7 @@
   ],
   "topbarCtaButton": {
     "name": "Start Free Trial",
-    "url": "https://sealmetrics.com/signup"
+    "url": "https://app.sealmetrics.com/"
   },
   "domain": "knowledge.sealmetrics.com",
   "navigation": [
@@ -37,13 +37,13 @@
     {
       "group": "📋 First Steps",
       "pages": [
+        "first-steps/Cookieless-Tracking.mdx",
         "first-steps/account-setup",
-        "first-steps/installation",
-        "first-steps/verification", 
-        "first-steps/dashboard-tour",
-        "first-steps/first-data",
-        "first-steps/team-setup",
-        "first-steps/privacy-settings",
+        "first-steps/first-party-tracker", 
+        "first-steps/how-sealmetrics-works",
+        "first-steps/how-superprivacy-tracking-works",
+        "first-steps/sealmetrics-difference-post",
+        "first-steps/setting-up-trackers-in-sealmetrics",
         "first-steps/tracking-validation",
         "first-steps/goals-setup"
       ]
