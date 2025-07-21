@@ -1,0 +1,265 @@
+---
+title: "How to change UTM parameters"
+description: "Configure custom UTM parameters in SealMetrics for Adobe Analytics and other tracking systems"
+---
+
+---
+
+# How to change UTM parameters
+
+This guide helps customers using custom parameters or Adobe Analytics (rather than Google Analytics) to configure SealMetrics with their preferred parameter structure for marketing campaign tracking.
+
+## When You Need Custom UTM Parameters
+
+### Alternative Analytics Platforms
+
+- **Adobe Analytics**: Uses different parameter conventions
+- **Custom tracking systems**: Internal parameter structures
+- **Enterprise solutions**: Company-specific tracking requirements
+- **Legacy systems**: Existing parameter conventions to maintain
+- **Multi-platform tracking**: Consistent parameters across platforms
+
+### Business Requirements
+
+- **Naming conventions**: Company-specific parameter naming
+- **Campaign structure**: Unique campaign organization needs
+- **Reporting consistency**: Maintain consistency across tools
+- **Team workflows**: Match existing team processes
+- **Historical data**: Preserve historical parameter usage
+
+## Configuration Process
+
+### Step 1: Access UTM Settings
+
+Navigate to: **Account setup \>\> UTMs Reference**
+
+![Sealmetrics Account Setup Pn](/images/sealmetrics-account-setup.png)
+
+### Step 2: Configure Custom Parameters
+
+If you prefer not to work with Google Analytics parameters and need to adjust to a different parameter structure, follow these steps in the UTM configuration section.
+
+![Sealmetrics Utms Reference Pn](/images/sealmetrics-utms-reference.png)
+
+## Standard vs Custom UTM Parameters
+
+### Standard Google Analytics UTMs
+
+```
+utm_source=google
+utm_medium=cpc
+utm_campaign=summer_sale
+utm_content=banner_ad
+utm_term=running_shoes
+```
+
+### Adobe Analytics Examples
+
+```
+cid=summer_sale_google_cpc
+s_kwcid=AL!1234!3!567890!e!!g!!running%20shoes
+ef_id=abc123def456:G:s
+s_cmp=summer_sale
+```
+
+### Custom Enterprise Examples
+
+```
+src=google
+med=paid_search
+camp=summer_sale_2024
+cont=banner_300x250
+kw=running_shoes
+```
+
+## Common Custom Parameter Structures
+
+### Adobe Analytics Integration
+
+**Adobe standard parameters:**
+
+- `s_cmp` → Campaign name
+- `s_kwcid` → Keyword tracking
+- `cid` → Campaign ID
+- `ef_id` → External ID tracking
+
+**Configuration mapping:**
+
+```
+Standard UTM → Adobe Parameter
+utm_source → cid (source portion)
+utm_medium → s_cmp (medium portion)
+utm_campaign → s_cmp (campaign portion)
+utm_content → s_kwcid (content tracking)
+utm_term → s_kwcid (keyword tracking)
+```
+
+### Enterprise Custom Parameters
+
+**Shortened parameter names:**
+
+```
+src → Source
+med → Medium  
+cmp → Campaign
+cnt → Content
+trm → Term
+```
+
+**Company-specific conventions:**
+
+```
+channel → Traffic source
+campaign_id → Campaign identifier
+creative_id → Creative variation
+placement → Ad placement
+audience → Target audience
+```
+
+## Parameter Configuration Examples
+
+### E-commerce Setup
+
+```
+Custom Parameter Structure:
+?source=google&medium=cpc&campaign=holiday_sale&product=shoes&audience=runners
+
+SealMetrics Mapping:
+Source: google
+Medium: cpc
+Campaign: holiday_sale
+Content: shoes
+Term: runners
+```
+
+### B2B SaaS Setup
+
+```
+Custom Parameter Structure:
+?channel=linkedin&type=sponsored&program=leadgen_q4&content=whitepaper&segment=enterprise
+
+SealMetrics Mapping:
+Source: linkedin
+Medium: sponsored
+Campaign: leadgen_q4
+Content: whitepaper
+Term: enterprise
+```
+
+### Content Marketing Setup
+
+```
+Custom Parameter Structure:
+?ref=blog&category=organic&topic=analytics&format=guide&persona=marketer
+
+SealMetrics Mapping:
+Source: blog
+Medium: organic
+Campaign: analytics
+Content: guide
+Term: marketer
+```
+
+## Implementation Best Practices
+
+### Consistent Naming
+
+- **Standardize across campaigns**: Use consistent parameter values
+- **Document conventions**: Maintain parameter naming documentation
+- **Team training**: Ensure team understands parameter structure
+- **Quality control**: Regular audits of parameter usage
+- **Automation**: Use tools to generate consistent parameters
+
+### Parameter Validation
+
+- **URL testing**: Test all URLs with parameters before deployment
+- **Tracking verification**: Verify parameters appear correctly in reports
+- **Case sensitivity**: Ensure consistent case usage
+- **Special characters**: Avoid problematic characters in parameters
+- **Length limits**: Stay within parameter length limitations
+
+### Cross-Platform Consistency
+
+- **Multiple tools**: Ensure parameters work across all analytics tools
+- **Campaign alignment**: Align parameters with campaign management tools
+- **Reporting integration**: Parameters should support unified reporting
+- **API compatibility**: Ensure parameters work with API integrations
+- **Export compatibility**: Parameters should export cleanly
+
+## Migration from Standard UTMs
+
+### Planning Migration
+
+1. **Audit current parameters**: Document existing UTM usage
+2. **Map to new structure**: Define mapping from old to new parameters
+3. **Create transition plan**: Plan gradual migration approach
+4. **Test thoroughly**: Test new parameters before full deployment
+5. **Train team**: Update team processes and documentation
+
+### Transition Strategies
+
+- **Parallel tracking**: Run both old and new parameters temporarily
+- **Gradual rollout**: Migrate campaigns one at a time
+- **Historical preservation**: Maintain historical data integrity
+- **Monitoring**: Monitor data quality during transition
+- **Rollback plan**: Have plan to revert if issues arise
+
+## Troubleshooting Common Issues
+
+### Parameter Not Appearing
+
+- **Check spelling**: Verify parameter names match configuration
+- **Case sensitivity**: Ensure consistent capitalization
+- **URL encoding**: Check for proper URL encoding
+- **Character limits**: Verify parameters aren't too long
+- **Special characters**: Remove problematic characters
+
+### Data Inconsistencies
+
+- **Mixed conventions**: Ensure consistent parameter usage
+- **Team coordination**: Verify all team members use same conventions
+- **Tool synchronization**: Check all tools use same parameter mapping
+- **Historical data**: Account for historical parameter differences
+- **Regular audits**: Perform regular data quality checks
+
+### Integration Issues
+
+- **Platform compatibility**: Verify parameters work with all platforms
+- **API limitations**: Check for API parameter restrictions
+- **Export problems**: Test data export functionality
+- **Third-party tools**: Ensure compatibility with marketing tools
+- **Performance impact**: Monitor impact on page loading
+
+## Advanced Configuration
+
+### Dynamic Parameter Generation
+
+```
+// Generate parameters based on context
+function generateCustomParams(campaign, source, content) {
+    const params = new URLSearchParams();
+    params.append('cmp', campaign);
+    params.append('src', source);
+    params.append('cnt', content);
+    params.append('ts', Date.now());
+    return params.toString();
+}
+```
+
+### Automated Parameter Management
+
+- **Campaign management integration**: Auto-generate from campaign tools
+- **Template systems**: Use templates for consistent parameter generation
+- **Bulk operations**: Tools for bulk parameter generation
+- **Quality assurance**: Automated parameter validation
+- **Reporting automation**: Automated reporting with custom parameters
+
+---
+
+<Tip>
+  When migrating to custom UTM parameters, start with a small test campaign to verify everything works correctly before rolling out to all campaigns.
+</Tip>
+
+<Note>
+  Changing UTM parameters affects how your campaigns are tracked and reported. Ensure all team members understand the new parameter structure before implementing changes.
+</Note>

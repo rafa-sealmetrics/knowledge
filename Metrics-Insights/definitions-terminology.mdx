@@ -1,0 +1,295 @@
+---
+title: "SealMetrics Definitions and Terminology"
+---
+
+
+## Core Metrics
+
+### Visit
+
+A **visit** occurs when a user lands on your website from an external source. Specifically, a visit is counted when:
+
+- The referrer is empty (direct traffic)
+- The referrer originates from a different domain
+
+**Important Notes:**
+
+- Each entry to your site counts as a separate visit
+- Refreshing or reloading the landing page multiple times still counts as separate visits
+- Internal navigation (same domain) does not generate new visits
+
+**Examples:**
+
+- User types your URL directly → **Visit**
+- User clicks from Google search results → **Visit**
+- User navigates from page A to page B on your site → **Page View** (not a visit)
+
+### Page View
+
+A **page view** is recorded when a visitor loads or reloads any page on your website where the referrer is the same domain (internal navigation).
+
+**Characteristics:**
+
+- Tracks content consumption within your site
+- Measures user engagement beyond initial landing
+- Helps understand user journey through your website
+- Does not count as new visits
+
+**Examples:**
+
+- User moves from homepage to about page → **Page View**
+- User refreshes the current page → **Page View**
+- User uses browser back button within your site → **Page View**
+
+### Event
+
+An **event** represents any specific interaction or action on your website that you choose to track beyond standard page views.
+
+**Common Event Types:**
+
+- Button clicks
+- Form submissions
+- Video plays/pauses
+- File downloads
+- Scroll depth milestones
+- Time-based engagement
+- Custom business actions
+
+**Event Structure:**
+
+- **Event Type:** The category of action (e.g., 'click', 'download', 'video')
+- **Event Label:** Specific identifier (e.g., 'contact-form', 'pricing-pdf')
+- **Event Value:** Optional numeric value for business impact
+
+## Business Metrics
+
+### Conversion
+
+A **conversion** is a user action that aligns with your predefined business goals and represents successful completion of desired outcomes.
+
+**Types of Conversions:**
+
+- **Primary Conversions:** Main business objectives (purchases, signups, leads)
+- **Secondary Conversions:** Supporting goals (newsletter subscriptions, resource downloads)
+
+**Conversion Characteristics:**
+
+- Must be explicitly tracked with conversion pixels or events
+- Can have monetary values assigned
+- Used for ROI calculations and campaign optimization
+- Tracked regardless of user consent (privacy-compliant)
+
+### Microconversion
+
+A **microconversion** is an intermediate action that indicates user progress toward a primary conversion goal but represents a smaller commitment level.
+
+**Examples of Microconversions:**
+
+- Newsletter subscription
+- Adding items to shopping cart
+- Creating user account
+- Downloading whitepapers
+- Engaging with pricing calculator
+- Spending significant time on key pages
+
+**Strategic Value:**
+
+- Indicates user intent and engagement level
+- Helps optimize conversion funnels
+- Provides early indicators of campaign success
+- Enables nurturing strategies for partial conversions
+
+### Funnel
+
+A **funnel** represents the defined sequence of steps that users must complete to reach a specific business goal.
+
+**Funnel Components:**
+
+- **Entry Point:** How users enter the funnel
+- **Intermediate Steps:** Required actions or page visits
+- **Conversion Point:** Final goal completion
+- **Drop-off Points:** Where users exit without converting
+
+**Funnel Analysis Benefits:**
+
+- Identifies optimization opportunities
+- Reveals user behavior patterns
+- Quantifies conversion rate at each stage
+- Guides UX and marketing improvements
+
+## Platform Structure
+
+### Account
+
+An **Account** is the primary container where all traffic data for a website is collected, stored, and analyzed.
+
+**Account Characteristics:**
+
+- Contains one main domain
+- Can include multiple subdomains under the same account
+- Serves as the main repository for all analytics data
+- Enables comprehensive tracking across site sections
+- Maintains data consistency and user journey integrity
+
+**Account Scope:**
+
+- All pages on the primary domain
+- All subdomains (blog.example.com, shop.example.com)
+- Cross-subdomain user journey tracking
+- Unified reporting and analysis
+
+### Subdomain
+
+A **subdomain** is a part of a larger domain used to organize different sections or functionalities of a website.
+
+**Common Subdomain Examples:**
+
+- `blog.example.com` - Company blog
+- `shop.example.com` - E-commerce section
+- `support.example.com` - Help and documentation
+- `app.example.com` - Application interface
+
+**SealMetrics Subdomain Handling:**
+
+- Tracked under the same account as main domain
+- Provides comprehensive view of user interactions
+- Maintains attribution across subdomain navigation
+- Enables complete customer journey analysis
+
+## Traffic Classification
+
+### Traffic Source
+
+A **traffic source** identifies the origin channel through which users arrive at your website.
+
+**Primary Traffic Sources:**
+
+- **SEO (Organic Search):** Search engines like Google, Bing, DuckDuckGo
+- **Direct:** Direct URL entry, bookmarks, or unknown sources
+- **Social:** Social media platforms (Facebook, Twitter, LinkedIn)
+- **Referral:** Other websites linking to yours
+- **Paid:** Advertising campaigns with UTM parameters
+- **Email:** Email campaign traffic
+
+**Attribution Importance:**
+
+- Evaluates marketing channel performance
+- Guides budget allocation decisions
+- Identifies most valuable traffic sources
+- Enables channel-specific optimization strategies
+
+## Technical Features
+
+### Real-Time Tracking
+
+**Real-time tracking** provides immediate data collection and display as users interact with your website.
+
+**Capabilities:**
+
+- Live visitor activity monitoring
+- Instant conversion tracking
+- Immediate campaign performance feedback
+- Real-time traffic source identification
+
+**Use Cases:**
+
+- Campaign launch monitoring
+- Event or promotion tracking
+- Website issue identification
+- Immediate optimization decisions
+
+### Data Retention
+
+**Data retention** refers to the duration that collected data remains stored and accessible for analysis.
+
+**SealMetrics Data Retention:**
+
+- Complies with privacy regulations (GDPR, ePrivacy)
+- Provides sufficient historical data for trend analysis
+- Balances business needs with legal requirements
+- Enables long-term performance tracking
+
+**Compliance Considerations:**
+
+- Automatic data expiration after retention period
+- User rights to data deletion
+- Legal data storage requirements
+- Privacy-by-design implementation
+
+## Privacy and Compliance
+
+### Consentless Analytics
+
+**Consentless analytics** enables tracking and analyzing user behavior without requiring explicit user consent by avoiding personal data collection.
+
+**SealMetrics Consentless Approach:**
+
+- No cookies or persistent identifiers used
+- No personal data collection
+- Complies with GDPR and ePrivacy Directive
+- Provides accurate insights without consent barriers
+
+**Key Benefits:**
+
+- 100% traffic visibility
+- No consent-related data gaps
+- Simplified compliance requirements
+- Accurate marketing attribution
+
+**Privacy Protection Methods:**
+
+- Server-side processing without client-side storage
+- Aggregated data collection only
+- No cross-site tracking capabilities
+- Immediate data anonymization
+
+## Advanced Concepts
+
+### Session Management
+
+While SealMetrics doesn't use traditional sessions, it employs privacy-compliant methods to understand user interactions:
+
+**Session-like Behavior:**
+
+- Same-domain navigation tracking
+- Time-based interaction grouping
+- Activity pattern recognition
+- Conversion attribution within interaction periods
+
+### Attribution Methodology
+
+SealMetrics uses **last-click attribution** for privacy compliance:
+
+**Attribution Characteristics:**
+
+- Credits conversions to the most recent traffic source
+- No cross-session tracking required
+- Complies with privacy regulations
+- Provides actionable marketing insights
+
+### Data Processing
+
+**Server-Side Processing:**
+
+- All analytics processing occurs on SealMetrics servers
+- No client-side data storage requirements
+- Immediate data anonymization
+- Privacy-by-design architecture
+
+## Measurement Accuracy
+
+### Cookieless Tracking Benefits:
+
+- Immune to cookie blockers
+- Unaffected by browser privacy settings
+- Consistent across all user types
+- No consent-related data loss
+
+### Data Quality Factors:
+
+- Referrer-based source attribution
+- UTM parameter recognition
+- Server-side validation
+- Real-time processing accuracy
+
+This comprehensive terminology guide ensures consistent understanding and implementation of SealMetrics across all team members and technical implementations.

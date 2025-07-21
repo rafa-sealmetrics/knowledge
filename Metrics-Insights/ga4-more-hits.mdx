@@ -1,0 +1,208 @@
+---
+title: "Why Does GA4 Measure More Than SealMetrics?"
+description: "If you notice that Google Analytics 4 (GA4) shows higher traffic numbers than SealMetrics, this typically indicates implementation issues rather than platform differences. The most common cause is GA4 tracking without proper consent while SealMetrics is correctly respecting privacy regulations.
+
+"
+---
+
+## 
+
+## Common Causes and Solutions
+
+### 1. Cookie Banner Not Blocking GA4 Cookies
+
+**Problem:** GA4 cookies are often not blocked by cookie banners, allowing GA4 to track 100% of traffic without user consent, which violates privacy regulations like GDPR and ePrivacy.
+
+**Why This Happens:**
+
+- Cookie banners may only block third-party cookies
+- GA4 first-party cookies might be allowed by default
+- Improper cookie banner configuration
+- GA4 tracking scripts loading before consent is given
+
+**How to Investigate:** Use SealMetrics' **free Cookie Scanner tool** at https://sealmetrics.com/free-cookie-scanner/ to check which cookies are being set without user consent.
+
+**Solution:**
+
+- Configure your cookie banner to block GA4 cookies before consent
+- Ensure GA4 scripts don't load until consent is obtained
+- Review cookie banner settings for analytics category blocking
+
+### 2. Cookie Banner Blocking SealMetrics Pixel
+
+**Problem:** Cookie banners may incorrectly block SealMetrics' JavaScript instead of just blocking cookies, causing SealMetrics to track less traffic.
+
+**Key Difference:**
+
+- Cookie banners should block **cookie-generating scripts**
+- SealMetrics doesn't use cookies, so its pixel shouldn't be blocked
+- Incorrect implementation blocks SealMetrics' consent-free tracking
+
+**Solution:**
+
+- Configure cookie banner to allow SealMetrics pixel (it's cookieless)
+- Ensure SealMetrics tracking runs independently of consent
+- Verify that cookie banner rules specifically target cookie-based analytics only
+
+### 3. Consent Mode v2 Misconfiguration
+
+**Problem:** Google Consent Mode v2 may be set up to accept analytics cookies by default, causing GA4 to fire without explicit user consent.
+
+**Common Misconfigurations:**
+
+- Analytics storage granted by default
+- Basic Consent Mode instead of Advanced
+- Incorrect consent signal implementation
+
+**How to Check:** Use SealMetrics' **Consent Mode Checker tool** at https://sealmetrics.com/consent-mode-checker/ to verify your implementation.
+
+**Warning Signs:**
+
+- Blank results in the Consent Mode Checker
+- High GA4 traffic numbers compared to consent rates
+- GA4 tracking users who didn't give consent
+
+**Solution:**
+
+- Implement Advanced Consent Mode v2 correctly
+- Ensure analytics_storage is denied by default
+- Configure proper consent signals
+
+### 4. Google Tag Manager (GTM) Configuration Issues
+
+**Problem:** GTM may be configured so that SealMetrics only triggers after user consent while GA4 fires immediately.
+
+**Common GTM Issues:**
+
+- SealMetrics tag restricted to consent triggers only
+- GA4 tag firing on all page views regardless of consent
+- Incorrect trigger configuration for privacy compliance
+
+**Investigation Steps:**
+
+1. Check GTM trigger configurations for both GA4 and SealMetrics
+2. Verify consent-based firing rules
+3. Review tag firing order and conditions
+4. Test in GTM Preview mode
+
+**Solution:**
+
+- Configure SealMetrics to fire on all page views (it's consentless)
+- Restrict GA4 to fire only after consent
+- Ensure proper trigger hierarchy in GTM
+
+## Diagnostic Steps
+
+### Step 1: Audit Cookie Implementation
+
+1. Run the **Cookie Scanner** on your website
+2. Check if GA4 cookies (\_ga, _ga_\*, etc.) appear without consent
+3. Verify that only essential cookies load before consent
+
+### Step 2: Test Consent Mode
+
+1. Use the **Consent Mode Checker** tool
+2. Verify that analytics_storage starts as 'denied'
+3. Confirm consent signals update properly
+
+### Step 3: Review GTM Configuration
+
+1. Enter GTM Preview mode
+2. Load your website without giving consent
+3. Check which tags fire immediately vs. after consent
+4. Verify SealMetrics isn't being blocked inappropriately
+
+### Step 4: Compare Traffic Patterns
+
+1. Monitor GA4 vs. SealMetrics traffic over several days
+2. Calculate the percentage difference
+3. Cross-reference with consent acceptance rates
+4. Identify specific pages or traffic sources with largest discrepancies
+
+## Expected Behavior
+
+### Compliant Setup:
+
+- **SealMetrics:** Tracks all traffic (cookieless, no consent needed)
+- **GA4:** Only tracks traffic after explicit consent
+- **Result:** SealMetrics should show higher or equal numbers to GA4
+
+### Non-Compliant Setup:
+
+- **SealMetrics:** Tracks all traffic
+- **GA4:** Tracks all traffic (violating privacy laws)
+- **Result:** Similar numbers, but GA4 is non-compliant
+
+## Privacy Compliance Considerations
+
+### Legal Requirements:
+
+- **GDPR:** Requires explicit consent for analytics cookies
+- **ePrivacy Directive:** Mandates consent for non-essential cookies
+- **CCPA/CPRA:** Requires disclosure and opt-out mechanisms
+
+### Best Practices:
+
+1. **Default Deny:** Analytics cookies should be blocked by default
+2. **Clear Consent:** Users must actively consent to analytics tracking
+3. **Granular Control:** Users should be able to accept/reject different cookie categories
+4. **Compliance Monitoring:** Regular audits of cookie behavior
+
+## Advanced Troubleshooting
+
+### Server-Side Tracking Investigation:
+
+If discrepancies persist, check for:
+
+- Server-side GA4 implementation bypassing consent
+- Measurement Protocol usage without consent checks
+- Backend analytics tracking independent of frontend consent
+
+### Network Analysis:
+
+Use browser developer tools to:
+
+1. Monitor network requests to GA4 servers
+2. Check when SealMetrics pixel fires
+3. Identify timing differences in tracking implementations
+
+### Cross-Platform Validation:
+
+- Compare data with other analytics platforms
+- Verify consent rates match expected tracking differences
+- Check for consistent patterns across different traffic sources
+
+## Solutions Summary
+
+| Issue                              | GA4 Behavior             | SealMetrics Behavior    | Fix                            |
+| :--------------------------------- | :----------------------- | :---------------------- | :----------------------------- |
+| Cookie banner not blocking GA4     | Tracks 100% of traffic   | Tracks 100% of traffic  | Block GA4 cookies pre-consent  |
+| Cookie banner blocking SealMetrics | Tracks with consent only | Blocked incorrectly     | Allow SealMetrics (cookieless) |
+| Consent Mode misconfigured         | Tracks by default        | Tracks 100% of traffic  | Fix Consent Mode v2 setup      |
+| GTM configuration error            | Fires on all pageviews   | Fires only post-consent | Correct GTM trigger rules      |
+
+## Prevention Strategies
+
+### Implementation Checklist:
+
+- [ ] Cookie banner blocks analytics cookies by default
+- [ ] SealMetrics pixel allowed (cookieless tracking)
+- [ ] Consent Mode v2 properly configured with 'denied' defaults
+- [ ] GTM triggers respect consent requirements
+- [ ] Regular compliance audits scheduled
+
+### Monitoring Setup:
+
+- Set up alerts for unusual traffic discrepancies
+- Monitor consent acceptance rates vs. GA4 traffic
+- Regular cookie compliance scans
+- Quarterly GTM configuration reviews
+
+## When to Contact Support
+
+Contact SealMetrics support if:
+
+- Traffic discrepancies exceed 20% after implementing fixes
+- Cookie scanner shows unexpected behavior
+- Consent Mode Checker results are unclear
+- GTM configuration appears correct but issues persis

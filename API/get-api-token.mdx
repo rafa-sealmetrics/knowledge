@@ -1,0 +1,184 @@
+---
+title: "How to obtain your API token from the SealMetrics platform"
+description: "Get your API token for programmatic access to SealMetrics data"
+---
+
+---
+
+API tokens provide secure programmatic access to your SealMetrics data, enabling integrations with custom applications, business intelligence tools, and automated reporting systems.
+
+## What is an API Token?
+
+### Purpose and Function
+
+- **Authentication**: Secure way to authenticate API requests
+- **Access control**: Controls what data and operations are available
+- **Integration enablement**: Allows third-party applications to access your data
+- **Automation**: Enables automated reporting and data processing
+
+### Token Characteristics
+
+- **Unique identifier**: Each token is unique to your account
+- **Secure format**: Long, randomly generated string
+- **Scope-limited**: Can be limited to specific permissions
+- **Revocable**: Can be disabled or regenerated if compromised
+
+## Step-by-Step Token Generation
+
+### Step 1: Access Account Settings
+
+1. Log into your SealMetrics dashboard
+2. Click on your profile/user name in the top-right corner
+3. Select "Account Settings" or "Profile Settings" from the dropdown
+4. Navigate to the "Connectors" section
+
+### Step 2: Generate API Token
+
+1. Look for "API Tokens" or "API Access" section
+2. Click "Generate New Token" or "Create API Token"
+3. Click "Copy Token"
+
+### Step 3: Secure Your Token
+
+1. **Copy immediately**: Copy the token as soon as it's generated
+2. **Store securely**: Save in a secure location (password manager, environment variables)
+3. **Document usage**: Record what the token is used for
+4. **Test access**: Verify the token works with a test API call
+
+## Token Management
+
+### Security Best Practices
+
+- **Unique names**: Use descriptive, unique names for each token
+- **Principle of least privilege**: Grant only necessary permissions
+- **Regular rotation**: Generate new tokens periodically
+- **Monitor usage**: Check token usage logs regularly
+- **Immediate revocation**: Revoke compromised tokens immediately
+
+### Multiple Tokens
+
+- **Different purposes**: Create separate tokens for different applications
+- **Team members**: Individual tokens for team members when needed
+- **Environment separation**: Different tokens for development, staging, and production
+- **Client projects**: Separate tokens for different client integrations
+
+## Using Your API Token
+
+### Authentication Header
+
+Include your token in API requests using the Authorization header:
+
+```
+Authorization: Bearer YOUR_API_TOKEN_HERE
+```
+
+### Example API Call
+
+```
+curl -H "Authorization: Bearer YOUR_API_TOKEN" \
+     -H "Content-Type: application/json" \
+     https://app.sealmetrics.com/api/v1/accounts
+```
+
+### Programming Languages
+
+**Python example:**
+
+```
+import requests
+
+headers = {
+    'Authorization': 'Bearer YOUR_API_TOKEN',
+    'Content-Type': 'application/json'
+}
+
+response = requests.get('https://app.sealmetrics.com/api/v1/accounts', headers=headers)
+```
+
+**JavaScript example:**
+
+```
+const headers = {
+    'Authorization': 'Bearer YOUR_API_TOKEN',
+    'Content-Type': 'application/json'
+};
+
+fetch('https://app.sealmetrics.com/api/v1/accounts', { headers })
+    .then(response => response.json())
+    .then(data => console.log(data));
+```
+
+## Common Use Cases
+
+### Business Intelligence Integration
+
+- **Data warehousing**: Import SealMetrics data into your data warehouse
+- **Custom dashboards**: Build company-specific analytics dashboards
+- **Automated reporting**: Generate scheduled reports for stakeholders
+- **KPI monitoring**: Track key performance indicators automatically
+
+### Application Integration
+
+- **Website integration**: Display analytics data on your website
+- **Mobile apps**: Include analytics in mobile applications
+- **Internal tools**: Integrate with internal business tools
+- **Customer portals**: Show relevant analytics to customers
+
+### Development and Testing
+
+- **Development environments**: Test integrations in development
+- **Staging systems**: Validate implementations before production
+- **Quality assurance**: Automate testing of analytics implementations
+- **Performance monitoring**: Monitor API performance and usage
+
+## Troubleshooting
+
+### Token Not Working
+
+- **Check format**: Ensure token is copied correctly without extra spaces
+- **Verify permissions**: Confirm token has necessary permissions for your use case
+- **Test connectivity**: Verify network connectivity to SealMetrics API
+- **Check expiration**: Some tokens may have expiration dates
+
+### Common Errors
+
+- **401 Unauthorized**: Token is invalid, expired, or malformed
+- **403 Forbidden**: Token lacks permissions for requested operation
+- **429 Too Many Requests**: Rate limit exceeded
+- **500 Internal Server Error**: Temporary server issue
+
+### Getting Help
+
+- **API documentation**: Consult SealMetrics API documentation
+- **Support team**: Contact SealMetrics support with token issues
+- **Community forums**: Check community discussions for similar issues
+- **Error logs**: Review error messages and API response details
+
+## Security Considerations
+
+### Token Protection
+
+- **Never commit to code**: Don't include tokens in source code repositories
+- **Environment variables**: Store tokens in environment variables
+- **Secure storage**: Use secure credential management systems
+- **Team access**: Limit who has access to API tokens
+
+### Monitoring and Auditing
+
+- **Usage logs**: Monitor API token usage patterns
+- **Unusual activity**: Watch for unexpected API calls
+- **Regular audits**: Review token permissions and usage quarterly
+- **Incident response**: Have a plan for compromised tokens
+
+### Compliance
+
+- **Data protection**: Ensure API usage complies with privacy regulations
+- **Access logging**: Maintain logs of API access for auditing
+- **Retention policies**: Follow data retention requirements
+- **Third-party sharing**: Control how API data is shared with third parties
+
+---
+
+<Note>
+  API tokens provide full access to your analytics data. Never share tokens publicly, commit them to code repositories, or store them in unsecured locations.
+</Note>

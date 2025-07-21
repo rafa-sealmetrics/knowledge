@@ -1,0 +1,208 @@
+---
+title: "Understanding the "(not set)" Value in Your SealMetrics Reports"
+description: "Description of your new file."
+---
+
+## What Does "(not set)" Mean?
+
+The "(not set)" value appears in your SealMetrics reports when you're working with UTM parameters in your URLs, but some required UTM parameters are missing or incomplete. This occurs when the system detects some UTM parameters but cannot find values for all expected parameters.
+
+## Why "(not set)" Appears
+
+SealMetrics assigns "(not set)" when it encounters URLs with partial UTM parameter sets. For example, if a URL contains `utm_source` with a value but lacks `utm_medium`, the system will show "(not set)" for the missing medium parameter.
+
+## Common Scenarios
+
+### Scenario 1: Missing UTM Medium
+
+**URL Example:**
+
+```
+https://yourwebsite.com/landing-page?utm_source=google&utm_campaign=summer-sale
+```
+
+**Result:** In the "Top Mediums" report, you'll see "(not set)" because `utm_medium` is not present in the URL, even though `utm_source` and `utm_campaign` are included.
+
+### Scenario 2: Missing UTM Source
+
+**URL Example:**
+
+```
+https://yourwebsite.com/landing-page?utm_medium=email&utm_campaign=newsletter
+```
+
+**Result:** In the "Top Sources" report, you'll see "(not set)" because `utm_source` is missing.
+
+### Scenario 3: Missing UTM Campaign
+
+**URL Example:**
+
+```
+https://yourwebsite.com/landing-page?utm_source=facebook&utm_medium=social
+```
+
+**Result:** In the "Top Campaigns" report, you'll see "(not set)" because `utm_campaign` is not specified.
+
+## Standard UTM Parameter Structure
+
+To avoid "(not set)" values, ensure your URLs include all relevant UTM parameters:
+
+### Required UTM Parameters
+
+- `utm_source` - Identifies the traffic source (e.g., google, facebook, newsletter)
+- `utm_medium` - Identifies the marketing medium (e.g., cpc, social, email)
+- `utm_campaign` - Identifies the specific campaign (e.g., summer-sale, product-launch)
+
+### Optional UTM Parameters
+
+- `utm_term` - Identifies paid search keywords
+- `utm_content` - Differentiates similar content or links within the same campaign
+
+### Properly Formatted URL Example
+
+```
+https://yourwebsite.com/landing-page?utm_source=google&utm_medium=cpc&utm_campaign=summer-sale&utm_term=analytics-software&utm_content=text-ad
+```
+
+## How to Fix "(not set)" Values
+
+### 1. Audit Your UTM Implementation
+
+Review all marketing campaigns and ensure complete UTM parameter sets:
+
+**Checklist:**
+
+- [ ] All campaign URLs include utm_source
+- [ ] All campaign URLs include utm_medium
+- [ ] All campaign URLs include utm_campaign
+- [ ] UTM parameters are consistently formatted
+- [ ] No typos in parameter names
+
+### 2. Create UTM Parameter Standards
+
+Establish consistent naming conventions:
+
+**Source Examples:**
+
+- `google` (for Google Ads)
+- `facebook` (for Facebook Ads)
+- `newsletter` (for email newsletters)
+- `twitter` (for Twitter campaigns)
+
+**Medium Examples:**
+
+- `cpc` (cost-per-click campaigns)
+- `social` (social media posts)
+- `email` (email campaigns)
+- `display` (banner advertisements)
+
+**Campaign Examples:**
+
+- `summer-sale-2024`
+- `product-launch-q1`
+- `holiday-promotion`
+
+### 3. Use UTM Builder Tools
+
+Leverage UTM building tools to ensure consistency:
+
+- Google's Campaign URL Builder
+- [UTM.io](http://UTM.io)
+- Internal UTM building spreadsheets
+- Marketing automation platform UTM builders
+
+### 4. Implement UTM Validation
+
+Before launching campaigns, validate URLs:
+
+```
+// Example UTM validation function
+function validateUTMParameters(url) {
+    const urlParams = new URLSearchParams(new URL(url).search);
+    const requiredParams = ['utm_source', 'utm_medium', 'utm_campaign'];
+    
+    const missing = requiredParams.filter(param => !urlParams.has(param));
+    
+    if (missing.length > 0) {
+        console.warn(`Missing UTM parameters: ${missing.join(', ')}`);
+        return false;
+    }
+    return true;
+}
+```
+
+## Impact on Reporting
+
+### Data Accuracy
+
+"(not set)" values can affect:
+
+- **Attribution accuracy** - Traffic may be misattributed
+- **Campaign performance analysis** - Incomplete data for ROI calculations
+- **Source/medium reporting** - Gaps in traffic source understanding
+
+### Report Interpretation
+
+When you see "(not set)":
+
+1. **Identify the pattern** - Which reports show the most "(not set)" values?
+2. **Trace back to source** - Find the campaigns or channels generating incomplete UTMs
+3. **Calculate impact** - Determine what percentage of traffic is affected
+4. **Prioritize fixes** - Address the highest-volume "(not set)" sources first
+
+## Best Practices
+
+### 1. UTM Parameter Hygiene
+
+- Always include the three core UTM parameters (source, medium, campaign)
+- Use lowercase letters and hyphens instead of spaces
+- Maintain consistent naming conventions across teams
+- Document your UTM standards for team reference
+
+### 2. Quality Assurance
+
+- Test all campaign URLs before launch
+- Regular audits of campaign performance for "(not set)" patterns
+- Set up alerts for campaigns with high "(not set)" percentages
+
+### 3. Team Training
+
+- Train marketing team members on proper UTM usage
+- Create templates for common campaign types
+- Establish approval processes for campaign URLs
+
+### 4. Automation
+
+- Use marketing automation tools that auto-generate UTMs
+- Implement URL validation in campaign creation workflows
+- Set up automatic UTM parameter population where possible
+
+## Monitoring and Maintenance
+
+### Regular Audits
+
+Perform monthly reviews:
+
+- Identify reports with high "(not set)" percentages
+- Track improvements in UTM implementation
+- Update UTM standards based on new marketing channels
+
+### Historical Data
+
+Note that fixing UTM parameters only affects future data collection. Historical "(not set)" values will remain in past reports.
+
+## Advanced Solutions
+
+### Custom Tracking
+
+For complex scenarios, consider:
+
+- Custom event tracking with explicit source attribution
+- Server-side UTM parameter validation and correction
+- Integration with marketing automation platforms for automatic UTM generation
+
+### Reporting Workarounds
+
+- Create filtered views excluding "(not set)" values for cleaner analysis
+- Use custom segments to focus on properly tagged traffic
+- Implement cross-reference reports to identify patterns in "(not set)" occurrences

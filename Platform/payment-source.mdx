@@ -1,0 +1,54 @@
+---
+title: "How to avoid conversions being attributed to "payment" in SealMetrics"
+description: "Ensure accurate conversion attribution by preventing payment processors from interfering with tracking"
+---
+
+# How to avoid conversions being attributed to "payment" in SealMetrics
+
+When users complete a purchase on your website and are redirected to a **payment gateway** (like Stripe, PayPal, Redsys, etc.), they temporarily leave your site. When they return to your **thank you page**, Sealmetrics detects this as a new session.
+
+If the payment gateway domain is not on our predefined list, the session is attributed to a **source = payment**.
+
+This means:
+
+✅ The conversion is tracked
+
+❌ But the original source (Google Ads, Facebook, Email, etc.) is lost
+
+That’s a problem if you care about real attribution — and we assume you do.
+
+## **Why Sealmetrics Attributes “Payment” as a Source**
+
+Sealmetrics is privacy-first and doesn’t rely on cookies or fingerprinting. Instead, we identify sessions based on signals like browser, OS, screen size, and timestamps.
+
+So when the user leaves your site and comes back from a third-party domain (like [secure.paymentsite.com](http://secure.paymentsite.com)), it’s treated as a **new session**, unless:
+
+1. The domain is on our **known list of payment providers**
+2. Or you implement a **referrer bypass system**
+
+## **When Does This Happen?**
+
+You’ll typically see conversions from “source = payment” when:
+
+- The payment provider uses a redirect flow
+- The return to the thank you page creates a new session
+- The referrer is the payment provider, not the original traffic source
+
+Example:
+
+1. A user clicks on a Google Ads campaign
+2. They add items to cart → proceed to checkout
+3. They pay via [payments.xyz.com](http://payments.xyz.com)
+4. They’re redirected to /thank-you
+
+   → Sealmetrics detects referrer = [payments.xyz.com](http://payments.xyz.com)
+
+   → Source is recorded as payment instead of Google Ads
+
+## **How to fix it:**
+
+![Seal Metrics 04 25 2025 04 15 PM(1)(1) Pn](/images/Seal-Metrics-04-25-2025_04_15_PM\(1\)\(1\).png)
+
+![Seal Metrics 04 25 2025 04 16 PM(1)(1) Pn](/images/Seal-Metrics-04-25-2025_04_16_PM\(1\)\(1\).png)
+
+Instead of adding "[consentmode.sealmetrics.net](http://consentmode.sealmetrics.net)" **add the Payment Gateway Domain.**

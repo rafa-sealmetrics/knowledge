@@ -1,0 +1,182 @@
+---
+title: "How does SealMetrics Calculate Entrances?"
+description: "Understanding how SealMetrics defines and calculates entrances for privacy-friendly analytics'"
+---
+
+---
+
+# How does SealMetrics Calculate Entrances?
+
+Understanding how SealMetrics calculates entrances is crucial for interpreting your analytics data correctly. This guide explains the entrance calculation methodology and how it differs from traditional analytics platforms.
+
+## What is an "Entrance"?
+
+An "Entrance" in SealMetrics represents an entry to your website. Each time a user accesses your site, a new Entrance is recorded. Unlike other analytics systems that may group sessions based on certain criteria, SealMetrics counts each access independently.
+
+### Key Characteristics
+
+- **Independent counting**: Each website access is counted separately
+- **No session grouping**: Unlike traditional analytics that group visits into sessions
+- **Privacy-friendly approach**: Avoids complex user tracking and profiling
+- **Simple methodology**: Straightforward calculation that's easy to understand
+- **Transparent metrics**: Clear definition of what constitutes an entrance
+
+## Entrance Calculation Example
+
+For example, if the same user visits your website 3 times within 10 minutes, SealMetrics would record **5 separate entrances**. This differs from traditional analytics platforms that might group these into a single session.
+
+### Practical Scenario
+
+```
+User Journey Example:
+10:00 AM - User visits homepage from SEO → Entrance #1
+10:02 AM - User returns from Google Ads → Entrance #2  
+10:09 AM - User comes back from Newsletter → Entrance #3
+
+Traditional Analytics: 1 session with 3 page views
+SealMetrics: 3 entrances with 3 page views.
+```
+
+## Difference between "Visits" in GA4 and "Entrances" in SealMetrics
+
+### Google Analytics 4 (GA4) Approach
+
+- **Session-based**: Groups multiple page views into sessions
+- **Time-based boundaries**: Sessions expire after 30 minutes of inactivity
+- **Campaign-based boundaries**: New campaigns can start new sessions
+- **Complex logic**: Multiple factors determine session boundaries
+- **User identification**: Relies on cookies and user IDs for session continuity
+
+### SealMetrics Approach
+
+- **Entrance-based**: Each website access is an individual entrance
+- **No time boundaries**: Time gaps don't affect entrance counting
+- **No session grouping**: Every access is independent
+- **Simple logic**: Clear, straightforward calculation
+- **Privacy-first**: No need for complex user identification
+
+### Comparison Table
+
+| Metric                   | GA4                          | SealMetrics                  |
+| :----------------------- | :--------------------------- | :--------------------------- |
+| **Methodology**          | Session-based grouping       | Individual entrance counting |
+| **Privacy**              | Requires cookies/user ID     | Cookie-free operation        |
+| **Complexity**           | Complex session logic        | Simple access counting       |
+| **Time boundaries**      | 30-minute inactivity timeout | No time-based grouping       |
+| **Multi-visit handling** | Groups into sessions         | Counts each access           |
+
+## Difference between "Entrances" and "Pageviews" in SealMetrics
+
+### Entrances
+
+- **Definition**: Each time someone accesses your website
+- **Scope**: Website-level metric
+- **Purpose**: Measure overall website traffic
+- **Calculation**: One entrance per website access
+- **Use case**: Understanding total website visits
+
+### Pageviews
+
+- **Definition**: Each time a specific page is loaded
+- **Scope**: Page-level metric
+- **Purpose**: Measure individual page popularity
+- **Calculation**: One pageview per page load
+- **Use case**: Understanding content performance
+
+### Relationship Example
+
+```
+User Journey:
+1. User enters site on homepage → 1 Entrance, 1 Pageview (homepage)
+2. User clicks to About page → 0 Entrances, 1 Pageview (about)
+3. User clicks to Contact page → 0 Entrances, 1 Pageview (contact)
+4. User leaves and returns to homepage → 1 Entrance, 1 Pageview (homepage)
+
+Total: 2 Entrances, 4 Pageviews
+```
+
+## Privacy and Compliance Benefits
+
+### GDPR Compliance
+
+- **No personal data**: Entrance counting doesn't require personal information
+- **No tracking**: Users aren't tracked across sessions or devices
+- **Data minimization**: Collects only necessary metrics
+- **Transparent processing**: Clear methodology for data collection
+
+### Technical Advantages
+
+- **Server-side calculation**: Can be calculated server-side without JavaScript
+- **Ad-blocker resistant**: Basic counting works even with ad blockers
+- **Performance friendly**: Minimal impact on website performance
+- **Simple implementation**: Easy to implement and maintain
+
+## Business Intelligence Applications
+
+### Traffic Analysis
+
+- **Volume measurement**: Understand total website traffic volume
+- **Peak identification**: Identify traffic peaks and patterns
+- **Source analysis**: See which sources drive most entrances
+- **Growth tracking**: Monitor entrance growth over time
+- **Comparative analysis**: Compare entrance volumes across periods
+
+### Marketing Effectiveness
+
+- **Campaign measurement**: Measure campaign effectiveness by entrances
+- **Channel comparison**: Compare marketing channels by entrance volume
+- **Content performance**: Understand which content drives entrances
+- **Conversion correlation**: Correlate entrances with conversion events
+- **ROI calculation**: Calculate return on marketing investment
+
+## Interpreting Entrance Data
+
+### When Entrances are Higher
+
+- **Mobile usage**: Mobile users often have shorter, more frequent visits
+- **Social traffic**: Social media drives multiple quick visits
+- **Content consumption**: Users return for different content pieces
+- **Bookmarked site**: Users have bookmarked your site for easy access
+
+### When Entrances are Lower
+
+- **Longer sessions**: Users stay longer on each visit
+- **Desktop usage**: Desktop users tend to have longer sessions
+- **Deep content**: Content that keeps users engaged longer
+- **Complex workflows**: Multi-step processes keeping users on site
+- **Application usage**: Web applications with sustained usage
+
+## Best Practices for Analysis
+
+### Comparative Analysis
+
+- **Time periods**: Compare entrances across different time periods
+- **Traffic sources**: Analyze entrance patterns by source
+- **Content types**: Compare entrances for different content categories
+- **Device types**: Understand entrance patterns by device
+- **Geographic regions**: Analyze global entrance patterns
+
+### Contextual Understanding
+
+- **Business context**: Consider your business model when analyzing entrances
+- **User behavior**: Understand typical user behavior patterns
+- **Content strategy**: Align entrance analysis with content goals
+- **Marketing cycles**: Consider marketing campaign timing
+- **Seasonal patterns**: Account for seasonal business variations
+
+### Actionable Insights
+
+- **Content optimization**: Use entrance data to optimize popular content
+- **Marketing adjustment**: Adjust marketing based on entrance patterns
+- **User experience**: Improve user experience based on entrance behavior
+- **Resource allocation**: Allocate resources to high-entrance content
+- **Strategic planning**: Use entrance trends for strategic decisions
+
+<Tip>
+  Use entrances as a complementary metric to pageviews and conversions. The combination provides a complete picture of user engagement and website performance.
+</Tip>
+
+
+<Note>
+  When comparing SealMetrics data with other analytics platforms, remember that entrance calculation differs from session-based metrics. This difference is by design for privacy-friendly analytics. 
+</Note>

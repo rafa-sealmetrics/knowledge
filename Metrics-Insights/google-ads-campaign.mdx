@@ -1,0 +1,200 @@
+---
+title: "How to track Google Ads campaigns"
+description: "Complete guide to tracking Google Ads campaigns with SealMetrics for accurate ROI measurement"
+---
+
+---
+
+# How to track Google Ads campaigns
+
+Properly tracking Google Ads campaigns is crucial for measuring performance, optimizing spend, and calculating return on investment. This guide covers comprehensive Google Ads tracking setup with SealMetrics.
+
+By incorporating these URL tracking templates into your Google Ads campaigns, SEAL can track campaigns, terms/keywords, placements, or product IDs from Google Ads.\
+​
+
+- **Google Search & Display (GDN):**
+
+  **{lpurl}?utm_medium=cpc&utm_source=google&utm_campaign={Campaignid}&utm\__term={ifsearch:{keyword}\\_{matchtype}}{ifcontent:{placement}}**\
+  ​
+- **Google Shopping**:
+
+  **{lpurl}?utm_medium=cpc&utm_source=google&utm_campaign={Campaignid}&utm_term={\_term}**\
+  ​
+
+  And add this custom parameter:
+
+  **{\_term} = Gshopping-{product_partition_id}**\
+  ​
+- **DSA Campaigns:**
+
+  **{lpurl}?utm_medium=cpc&utm_source=google&utm_campaign={Campaignid}&utm_term={targetid}**\
+  ​
+- **Only Display Campaigns:**
+
+  **{lpurl}?utm_medium=cpc&utm_medium=cpc&utm_source=google&utm_campaign={Campaignid}&utm_term={placement}**
+
+You can add this code directly under the account level following these Google ads instructions:\
+​
+
+[<u>https://support.google.com/google-ads/answer/6305348?hl=en</u>](https://support.google.com/google-ads/answer/6305348?hl=en)\
+​
+
+Following these instructions, you can add the Google Ads value-track parameters directly under the Account level. Then, Google Ads will automatically add the value track parameters in all your campaigns, even the new ones.
+
+![Account Settings SEAL Metrics Google Ads Pn](/images/Account-settings-SEAL-Metrics-Google-Ads.png)
+
+## Google Ads Tracking Overview
+
+### Why Track Google Ads?
+
+- **ROI measurement**: Calculate return on advertising spend (ROAS)
+- **Performance optimization**: Identify best-performing campaigns and keywords
+- **Budget allocation**: Distribute budget to highest-converting campaigns
+- **Audience insights**: Understand which audiences convert best
+- **Bid optimization**: Adjust bids based on actual conversion data
+
+### Tracking Methods
+
+- **UTM parameters**: Manual campaign tracking with URL parameters
+- **Auto-tagging**: Google's automatic URL tagging (GCLID)
+- **Conversion tracking**: Track specific actions and their values
+- **Enhanced conversions**: Improved conversion tracking accuracy
+- **Cross-platform attribution**: Track users across devices and platforms
+
+## UTM Parameter Setup for Google Ads
+
+### Manual UTM Tagging
+
+```
+Campaign URL Structure:
+https://yoursite.com/?utm_source=google&utm_medium=cpc&utm_campaign=summer_sale&utm_content=ad_group_1&utm_term=running_shoes
+
+Required Parameters:
+utm_source=google
+utm_medium=cpc (cost-per-click)
+utm_campaign=summer_sale
+utm_content=ad_group_1 (ad group or specific ad)
+utm_term=running_shoes (keyword)
+```
+
+### Google Ads Auto-Tagging
+
+Google Ads can automatically add tracking parameters:
+
+```
+Auto-tagged URL:
+https://yoursite.com/?gclid=Cj0KCQjw2cWgBhDYARIsALggUhqX...
+
+Benefits:
+- Automatic implementation
+- Detailed keyword data
+- Mobile app tracking
+- Cross-device tracking
+- Integration with Google Analytics
+```
+
+## Google Ads Campaign Structure for Tracking
+
+### Campaign Level Organization
+
+```
+Campaign Naming Convention:
+[Campaign Type]_[Target]_[Product/Service]_[Geographic]
+
+Examples:
+Search_Brand_Shoes_US
+Display_Retargeting_Apparel_Global
+Shopping_New_Customers_Electronics_EU
+Video_Awareness_Software_B2B
+```
+
+### Ad Group Structure
+
+```
+Ad Group Naming:
+[Product Category]_[Match Type]_[Audience]
+
+Examples:
+Running_Shoes_Exact_Athletes
+Business_Software_Broad_SMB
+Winter_Coats_Phrase_Women
+```
+
+### Keyword Organization
+
+```
+Keyword Structure:
+[Primary Keyword] - [Match Type] - [Intent]
+
+Examples:
+"buy running shoes" - Exact - Purchase
+running shoes - Broad - Research  
++premium +running +shoes - Modified Broad - Qualified
+```
+
+## Advanced Google Ads Tracking
+
+### ValueTrack Parameters
+
+Google Ads provides dynamic parameters for detailed tracking:
+
+```
+Enhanced URL with ValueTrack:
+https://yoursite.com/?utm_source=google&utm_medium=cpc&utm_campaign={campaign}&utm_content={adgroup}&utm_term={keyword}&device={device}&placement={placement}
+
+Available Parameters:
+{campaign} - Campaign name
+{adgroup} - Ad group name  
+{keyword} - Triggering keyword
+{device} - Device type (mobile, desktop, tablet)
+{placement} - Placement for display ads
+{target} - Targeting criterion
+{loc_physical_ms} - Physical location
+{matchtype} - Keyword match type
+```
+
+### Conversion Tracking Setup
+
+## Campaign Performance Measurement
+
+### Key Metrics to Track
+
+- **Impressions**: How often ads are shown
+- **Clicks**: Number of ad clicks
+- **CTR (Click-Through Rate)**: Clicks ÷ Impressions
+- **CPC (Cost Per Click)**: Average cost per click
+- **Conversions**: Number of desired actions completed
+- **CVR (Conversion Rate)**: Conversions ÷ Clicks
+- **CPA (Cost Per Acquisition)**: Cost ÷ Conversions
+- **ROAS (Return on Ad Spend)**: Revenue ÷ Cost
+
+### SealMetrics Google Ads Reports
+
+```
+Campaign Performance Analysis:
+Campaign: summer_sale_search
+Source: google
+Medium: cpc
+Clicks: 2,547
+Conversions: 127
+Conversion Rate: 4.99%
+Revenue: $15,240
+Cost: $3,817
+ROAS: 3.99:1
+```
+
+## Google Shopping Campaigns
+
+### Shopping Campaign Tracking
+
+```
+Shopping URL Parameters:
+https://yoursite.com/product?utm_source=google&utm_medium=shopping&utm_campaign=summer_shopping&utm_content=product_id_123
+
+Specific Parameters:
+utm_source=google
+utm_medium=shopping (or pla for Product Listing Ads)
+utm_campaign=summer_shopping
+utm_content=product_id_123 (specific product)
+utm_term=product_category (optional)
+```

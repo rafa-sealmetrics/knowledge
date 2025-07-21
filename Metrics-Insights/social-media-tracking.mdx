@@ -1,0 +1,207 @@
+---
+title: "How to track social ads campaigns"
+description: "Set up tracking for Facebook, Instagram, LinkedIn, Twitter and other social media advertising campaigns"
+---
+
+---
+
+# How to track social ads campaigns
+
+Properly tracking social media advertising campaigns is essential for measuring ROI and optimizing your social media marketing spend. This guide covers setup for all major social platforms.
+
+## Social Media Platforms Overview
+
+### Major Social Advertising Platforms
+
+- **Facebook Ads**: Facebook and Instagram advertising
+- **LinkedIn Ads**: Professional network advertising
+- **Twitter Ads**: Twitter advertising campaigns
+- **TikTok Ads**: Short-form video advertising
+- **Pinterest Ads**: Visual discovery advertising
+- **Snapchat Ads**: Mobile-first advertising
+- **YouTube Ads**: Video advertising (Google Ads platform)
+
+## UTM Parameter Setup for Social Ads
+
+### Facebook/Instagram Campaigns
+
+```
+Campaign URL Structure:
+https://yoursite.com/?utm_source=facebook&utm_medium=social&utm_campaign=summer_sale&utm_content=carousel_ad&utm_term=shoes
+
+Parameters:
+utm_source=facebook (or instagram)
+utm_medium=social (or paid-social)
+utm_campaign=summer_sale
+utm_content=carousel_ad (ad format/creative)
+utm_term=shoes (target audience or product)
+```
+
+### LinkedIn Campaigns
+
+```
+Campaign URL Structure:
+https://yoursite.com/?utm_source=linkedin&utm_medium=social&utm_campaign=leadgen_q4&utm_content=sponsored_post&utm_term=marketing_directors
+
+Parameters:
+utm_source=linkedin
+utm_medium=social (or sponsored)
+utm_campaign=leadgen_q4
+utm_content=sponsored_post
+utm_term=marketing_directors
+```
+
+### Twitter Campaigns
+
+```
+Campaign URL Structure:
+https://yoursite.com/?utm_source=twitter&utm_medium=social&utm_campaign=brand_awareness&utm_content=promoted_tweet&utm_term=tech_enthusiasts
+
+Parameters:
+utm_source=twitter
+utm_medium=social
+utm_campaign=brand_awareness
+utm_content=promoted_tweet
+utm_term=tech_enthusiasts
+```
+
+## Platform-Specific Tracking Setup
+
+### Facebook Ads Manager
+
+1. **Campaign Creation**: Create your ad campaign in Facebook Ads Manager
+2. **Ad Level Setup**: Go to ad level configuration
+3. **Website URL**: Add your destination URL
+4. **URL Parameters**: Add UTM parameters to tracking URL
+5. **Preview**: Use Facebook's URL preview tool to verify
+
+### LinkedIn Campaign Manager
+
+1. **Campaign Setup**: Create campaign in LinkedIn Campaign Manager
+2. **Landing Page**: Set destination landing page URL
+3. **Tracking**: Add UTM parameters to final URL
+4. **Insight Tag**: Install LinkedIn Insight Tag for additional tracking
+5. **Conversion Tracking**: Set up conversion tracking if needed
+
+### Twitter Ads
+
+1. **Campaign Creation**: Set up campaign in Twitter Ads dashboard
+2. **Website Clicks**: Choose website clicks or conversions objective
+3. **Destination URL**: Add your landing page URL with UTM parameters
+4. **Twitter Pixel**: Install Twitter pixel for enhanced tracking
+5. **Testing**: Use Twitter's URL validator
+
+## Best Practices for Social Media Tracking
+
+### UTM Parameter Conventions
+
+- **utm_source**: Use platform name (facebook, linkedin, twitter)
+- **utm_medium**: Use "social", "paid-social", or "social-ads"
+- **utm_campaign**: Use descriptive campaign names
+- **utm_content**: Specify ad format or creative variant
+- **utm_term**: Use for audience targeting or keywords
+
+### Naming Conventions
+
+```
+Consistent Format Example:
+Campaign: leadgen_q4_2024
+Content: carousel_video_v1
+Term: small_business_owners
+```
+
+### URL Structure Guidelines
+
+- **Consistency**: Use consistent parameter values across campaigns
+- **Descriptive names**: Make parameters easy to understand
+- **No spaces**: Use underscores or hyphens instead of spaces
+- **Lowercase**: Keep all parameters lowercase
+- **Length limits**: Stay within URL length limitations
+
+## Advanced Social Media Tracking
+
+### Facebook Pixel Integration
+
+```
+<!-- Facebook Pixel Base Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+```
+
+### LinkedIn Insight Tag
+
+```
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript">
+_linkedin_partner_id = "YOUR_PARTNER_ID";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+</script>
+```
+
+## Multi-Platform Campaign Tracking
+
+### Cross-Platform Consistency
+
+```
+Campaign Theme: Product Launch
+Facebook: utm_campaign=product_launch_fb
+LinkedIn: utm_campaign=product_launch_li  
+Twitter: utm_campaign=product_launch_tw
+Instagram: utm_campaign=product_launch_ig
+```
+
+## Reporting and Analysis
+
+### Key Metrics to Track
+
+- **Click-through rate (CTR)**: Effectiveness of ad creative
+- **Cost per click (CPC)**: Efficiency of ad spend
+- **Conversion rate**: Percentage of clicks that convert
+- **Cost per acquisition (CPA)**: Cost to acquire each customer
+- **Return on ad spend (ROAS)**: Revenue generated per dollar spent
+
+### SealMetrics Social Media Reports
+
+- **Traffic sources**: See social media traffic volume
+- **Campaign performance**: Compare campaigns across platforms
+- **Conversion attribution**: Track conversions back to social ads
+- **ROI analysis**: Calculate return on social media investment
+- **Audience insights**: Understand which audiences convert best
+
+## Troubleshooting Common Issues
+
+### UTM Parameters Not Showing
+
+- **URL verification**: Check UTMs are properly formatted
+- **Platform setup**: Verify parameters are added in ad platform
+- **Landing page**: Ensure landing page preserves parameters
+- **Case sensitivity**: Check for consistent capitalization
+- **URL encoding**: Verify special characters are properly encoded
+
+### Attribution Issues
+
+- **Cookie settings**: Check if tracking cookies are working
+- **Cross-domain**: Ensure tracking works across domains
+- **Mobile apps**: Mobile app redirects may lose parameters
+- **Privacy settings**: Ad blockers may affect tracking
+- **Platform changes**: Social platforms may modify URL handling
+
+---

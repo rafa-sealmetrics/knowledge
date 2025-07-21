@@ -1,0 +1,255 @@
+---
+title: "What is a TERM in SealMetrics"
+description: "In SealMetrics analytics, TERM represents the smallest unit of measurement for traffic source attribution. It provides granular insight into the specific origin or trigger that brought users to your website. Understanding how TERM works across different traffic sources is essential for detailed performance analysis and optimization."
+---
+
+## TERM Definition by Traffic Source
+
+### SEO Traffic: Landing Page URL
+
+**Definition:** For organic search traffic, the TERM is the specific landing page URL where the user first arrives on your website.
+
+**Purpose:** Identifies which pages are performing well in search results and attracting organic traffic.
+
+**Example:**
+
+```
+Search: User searches "privacy analytics" on Google
+Landing Page: https://yoursite.com/privacy-analytics-solution
+TERM: /privacy-analytics-solution
+```
+
+**Strategic Value:**
+
+- Identifies top-performing SEO landing pages
+- Reveals which content attracts organic traffic
+- Enables page-level SEO optimization
+- Shows user search intent based on landing page
+
+**Use Cases:**
+
+- Optimize high-traffic landing pages for better conversion
+- Identify underperforming pages needing SEO improvement
+- Understand which content topics drive organic traffic
+- Plan content strategy based on successful landing pages
+
+### Referrer Traffic: Previous Page URL
+
+**Definition:** For referral traffic, the TERM is the complete URL of the previous page (referrer) that sent the user to your site.
+
+**Purpose:** Shows exactly which external pages or content are driving traffic to your website.
+
+**Example:**
+
+```
+Referrer Site: Industry blog links to your website
+Referrer URL: https://industryblog.com/best-analytics-tools-2024
+TERM: https://industryblog.com/best-analytics-tools-2024
+```
+
+**Strategic Value:**
+
+- Identifies specific referral sources
+- Reveals which external content mentions your brand
+- Enables relationship building with referral partners
+- Shows content that naturally attracts backlinks
+
+**Use Cases:**
+
+- Develop partnerships with high-value referral sources
+- Create content similar to what generates referrals
+- Monitor brand mentions and citations
+- Identify influencer and media coverage impact
+
+### Google Ads Traffic: Keyword
+
+**Definition:** For Google Ads traffic, the TERM corresponds to the specific keyword that triggered the ad display and click.
+
+**Purpose:** Provides keyword-level performance data for paid search campaigns.
+
+**Example:**
+
+```
+Search Query: "cookieless analytics"
+Keyword: cookieless analytics
+TERM: cookieless analytics
+```
+
+**Strategic Value:**
+
+- Enables keyword-level ROI analysis
+- Identifies high-performing vs. underperforming keywords
+- Supports bid optimization strategies
+- Reveals search intent patterns
+
+**Use Cases:**
+
+- Optimize keyword bids based on performance
+- Expand successful keyword themes
+- Identify negative keywords to exclude
+- Improve ad copy relevance to search terms
+
+### UTM Term Traffic: Custom Term Value
+
+**Definition:** For UTM-tagged campaigns, the TERM is the value specified in the `utm_term` parameter.
+
+**Purpose:** Provides custom granular tracking for campaign elements defined by marketers.
+
+**Example:**
+
+```
+Campaign URL: https://yoursite.com/landing?utm_source=newsletter&utm_medium=email&utm_term=privacy-focus
+TERM: privacy-focus
+```
+
+**Strategic Value:**
+
+- Enables custom campaign segmentation
+- Allows tracking of specific messaging themes
+- Provides flexibility in campaign attribution
+- Supports A/B testing of campaign elements
+
+**Use Cases:**
+
+- Track performance of different message themes
+- Compare effectiveness of various campaign angles
+- Segment audiences based on interest areas
+- Measure content variation performance
+
+## Technical Implementation
+
+### Automatic TERM Collection
+
+**SEO Traffic Processing:**
+
+1. User arrives from search engine
+2. SealMetrics captures landing page URL
+3. URL path extracted as TERM
+4. Associated with SEO traffic classification
+
+**Referrer Traffic Processing:**
+
+1. User clicks link from external site
+2. Browser sends referrer header
+3. Full referrer URL captured as TERM
+4. Associated with referral traffic classification
+
+**Google Ads Integration:**
+
+1. User clicks Google Ads advertisement
+2. Keyword data captured from Google Ads API
+3. Keyword stored as TERM
+4. Associated with paid search traffic
+
+**UTM Parameter Extraction:**
+
+1. User arrives via UTM-tagged URL
+2. `utm_term` parameter value extracted
+3. Custom term value stored as TERM
+4. Associated with campaign traffic classification
+
+### Data Processing and Storage
+
+**Real-Time Processing:**
+
+- TERM extraction happens immediately upon visit
+- No delays in data availability
+- Real-time reporting capabilities
+- Instant campaign performance insights
+
+**Data Quality Measures:**
+
+- URL normalization for consistent SEO terms
+- Referrer validation and cleaning
+- UTM parameter standardization
+- Duplicate term detection and handling
+
+## Reporting and Analysis
+
+### TERM Performance Metrics
+
+**Available Metrics by TERM:**
+
+- Visit count and traffic volume
+- Page views and engagement metrics
+- Conversion rates and revenue attribution
+- User behavior patterns
+- Time-based performance trends
+
+**Cross-Source TERM Analysis:**
+
+- Compare TERM performance across different traffic sources
+- Identify high-value terms regardless of source
+- Understand user intent across channels
+- Optimize for best-performing terms
+
+### Strategic Insights from TERM Data
+
+**Content Optimization:**
+
+- Identify top-performing landing pages (SEO terms)
+- Optimize content based on successful referral terms
+- Develop content around high-performing keywords
+- Create campaigns targeting successful UTM terms
+
+**Channel Performance:**
+
+- Compare keyword performance across SEO vs. paid
+- Identify referral sources worth nurturing
+- Understand campaign messaging effectiveness
+- Optimize budget allocation based on term performance
+
+### Campaign Optimization
+
+**UTM TERM Strategy:** Use UTM terms to track granular campaign elements:
+
+**Email Campaign Example:**
+
+```
+utm_term=new-features    → Track interest in product updates
+utm_term=case-study      → Track response to customer stories
+utm_term=pricing-focus   → Track price-sensitive messaging
+utm_term=privacy-focus   → Track privacy-conscious messaging
+```
+
+**Social Media Campaigns:**
+
+```
+utm_term=organic-post    → Track organic social performance
+utm_term=paid-promotion  → Track promoted post performance
+utm_term=influencer-collab → Track influencer partnership ROI
+utm_term=community-share → Track community-driven sharing
+```
+
+## Best Practices for TERM Optimization
+
+### SEO Landing Page Optimization
+
+**High-Performing TERM Analysis:**
+
+1. Identify pages with high traffic but low conversion
+2. Optimize content and calls-to-action on these pages
+3. Improve user experience for top-traffic landing pages
+4. Create similar content for successful page themes
+
+**Content Gap Analysis:**
+
+1. Identify valuable keywords driving traffic to competitors
+2. Create content targeting similar search intent
+3. Optimize existing pages for related terms
+4. Monitor performance of new content initiatives
+
+### Referral Relationship Building
+
+**High-Value Referrer Engagement:**
+
+1. Identify sites generating quality referral traffic
+2. Reach out to build relationships with these sites
+3. Offer guest content or collaboration opportunities
+4. Monitor and nurture referral partnerships
+
+**Content Strategy for Referrals:**
+
+1. Analyze what content attracts natural backlinks
+2. Create more content in successful categories
+3. Develop shareable resources and tools 4

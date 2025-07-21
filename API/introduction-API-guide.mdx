@@ -1,0 +1,189 @@
+---
+title: "Using the SealMetrics API: Basics, Reports, and KPIs"
+description: "Learn how to integrate SealMetrics data into your applications using the API"
+---
+
+---
+
+# Using the SealMetrics API: Basics, Reports, and KPIs
+
+The SealMetrics API allows you to programmatically access your analytics data, create custom integrations, and build automated reporting solutions.
+
+## API Overview
+
+### What You Can Do
+
+- **Retrieve analytics data**: Access all your SealMetrics data programmatically
+- **Generate reports**: Create custom reports and dashboards
+- **Real-time monitoring**: Build monitoring solutions with live data
+- **Data integration**: Connect SealMetrics with other business tools
+
+### API Capabilities
+
+- **RESTful design**: Standard HTTP methods and status codes
+- **JSON responses**: Structured data in JSON format
+- **Authentication**: Secure API token-based access
+- **Rate limiting**: Fair usage policies for API calls
+
+## Getting Started
+
+### Prerequisites
+
+- Active SealMetrics account
+- API token (obtain from account settings)
+- Basic programming knowledge
+- HTTP client or programming language of choice
+
+### Authentication
+
+- **API Token**: Required for all API requests
+- **Header format**: `Authorization: Bearer YOUR_API_TOKEN`
+- **Security**: Keep your API token secure and private
+- **Regeneration**: Can regenerate tokens if compromised
+
+## Basic API Endpoints
+
+### Account Information
+
+```
+GET /api/v1/accounts
+```
+
+Retrieve list of accounts you have access to.
+
+### Dashboard Data
+
+```
+GET /api/v1/accounts/{account_id}/dashboard
+```
+
+Get dashboard KPIs and summary metrics.
+
+### Traffic Sources
+
+```
+GET /api/v1/accounts/{account_id}/acquisition
+```
+
+Retrieve traffic source and acquisition data.
+
+### Conversion Data
+
+```
+GET /api/v1/accounts/{account_id}/conversions
+```
+
+Access conversion tracking and funnel data.
+
+## Reports and KPIs
+
+### Available KPIs
+
+- **Visits**: Total unique visits
+- **Page Views**: Total page views
+- **Conversions**: Goal completions
+- **Revenue**: E-commerce tracking data
+- **Conversion Rate**: Conversion percentages
+- **Traffic Sources**: Source/medium attribution
+
+### Custom Reports
+
+- **Date ranges**: Specify custom date periods
+- **Filtering**: Filter by source, medium, device, etc.
+- **Grouping**: Group data by various dimensions
+- **Aggregation**: Sum, average, or count metrics
+
+### Data Formats
+
+- **JSON**: Standard API response format
+- **CSV export**: Available for some endpoints
+- **Real-time**: Live data access
+- **Historical**: Access to historical data
+
+## Common Use Cases
+
+### Business Intelligence
+
+- **Custom dashboards**: Build company-specific dashboards
+- **Executive reporting**: Automated executive summaries
+- **Data warehousing**: Import data into business intelligence tools
+- **Trend analysis**: Historical performance analysis
+
+### Marketing Automation
+
+- **Campaign tracking**: Monitor campaign performance
+- **Alert systems**: Notifications for performance changes
+- **Attribution modeling**: Custom attribution analysis
+- **ROI calculations**: Automated ROI reporting
+
+### E-commerce Integration
+
+- **Sales tracking**: Revenue and conversion monitoring
+- **Product analytics**: Product performance data
+- **Customer insights**: User behavior analysis
+- **Inventory optimization**: Data-driven inventory decisions
+
+## Best Practices
+
+### API Usage
+
+- **Rate limiting**: Respect API rate limits
+- **Error handling**: Implement proper error handling
+- **Caching**: Cache responses when appropriate
+- **Pagination**: Handle paginated responses correctly
+
+### Security
+
+- **Token security**: Keep API tokens secure
+- **HTTPS only**: Always use HTTPS for API calls
+- **Access control**: Limit API access to necessary personnel
+- **Regular rotation**: Rotate API tokens periodically
+
+### Data Management
+
+- **Data validation**: Validate API responses
+- **Backup strategies**: Implement data backup procedures
+- **Performance monitoring**: Monitor API response times
+- **Usage tracking**: Track your API usage patterns
+
+## Error Handling
+
+### Common HTTP Status Codes
+
+- **200**: Success
+- **401**: Unauthorized (check API token)
+- **403**: Forbidden (insufficient permissions)
+- **429**: Too Many Requests (rate limit exceeded)
+- **500**: Internal Server Error
+
+### Error Response Format
+
+```
+{
+  "error": {
+    "code": "INVALID_TOKEN",
+    "message": "The provided API token is invalid",
+    "details": "Please check your authorization header"
+  }
+}
+```
+
+## Getting Your API Token
+
+### Step-by-Step Process
+
+1. Log into your SealMetrics account
+2. Navigate to account settings
+3. Find the API section
+4. Generate or copy your API token
+5. Store securely for use in applications
+
+---
+
+<Tip>
+  Start with simple API calls to test your implementation before building complex integrations. Use the API documentation to understand all available endpoints and parameters.
+</Tip>
+
+<Note>
+  API tokens provide full access to your analytics data. Never share tokens publicly or commit them to public repositories. Use environment variables or secure configuration management.
+</Note>
