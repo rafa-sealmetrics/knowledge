@@ -37,75 +37,114 @@
     {
       "group": "📋 First Steps",
       "pages": [
-        "first-steps/Cookieless-Tracking.mdx",
+        "first-steps/Cookieless-Tracking",
         "first-steps/account-setup",
         "first-steps/first-party-tracker", 
         "first-steps/how-sealmetrics-works",
         "first-steps/how-superprivacy-tracking-works",
         "first-steps/sealmetrics-difference-post",
         "first-steps/setting-up-trackers-in-sealmetrics",
-        "first-steps/tracking-validation",
         "first-steps/goals-setup"
       ]
     },
     {
       "group": "⚙️ Features",
       "pages": [
-        "features/overview",
-        "features/real-time-analytics",
-        "features/consentless-tracking",
-        "features/event-tracking",
-        "features/conversion-tracking"
+        "features/1st-party-tracker",
+        "features/acquisition",
+        "features/Cost-Calculator",
+        "features/Funnel",
+        "features/HowtoAddVATNumberinMyInvoices",
+        "features/IP-Access-Control",
+        "features/ROAS-Evolution",
+        "features/add-domains",
+        "features/dashboard",
+        "features/definitions-guide"
       ]
     },
     {
       "group": "🖥️ Platform", 
       "pages": [
-        "platform/dashboard-overview",
-        "platform/reports",
-        "platform/filters",
-        "platform/integrations"
+        "platform/Create-Admin-User",
+        "platform/UpdateBillingInfo",
+        "platform/add-new-account",
+        "platform/add-new-user",
+        "platform/affiliate-link",
+        "platform/bot-filtering",
+        "platform/cancel-account",
+        "platform/change-password",
+        "platform/change-time-zone",
+        "platform/content-grouping",
+        "platform/data-consolidation",
+        "platform/delete-account",
+        "platform/find-account-id",
+        "platform/gtm-msr-appspot",
+        "platform/modifiy-invoice",
+        "platform/payment-source",
+        "platform/real-time-data",
+        "platform/subdomain-guide"
       ]
     },
     {
       "group": "📊 Metric Insights",
       "pages": [
-        "metrics/overview",
-        "metrics/traffic-analytics",
-        "metrics/user-behavior",
-        "metrics/conversion-metrics"
+        "metrics/ajax-forms",
+        "metrics/change-utm-parameters",
+        "metrics/definitions-terminology",
+        "metrics/entrance-hits",
+        "metrics/ga4-more-hits",
+        "metrics/google-ads-campaign",
+        "metrics/how-cookieless-tracking",
+        "metrics/last-click-attribution",
+        "metrics/lost-traffic",
+        "metrics/not-set-value",
+        "metrics/react-sites-tracking",
+        "metrics/referral-vs-direct-traffic",
+        "metrics/rejoined-traffic",
+        "metrics/seo-tracking",
+        "metrics/social-media-campaigns",
+        "metrics/spa-tracking",
+        "metrics/term-definition"
       ]
     },
     {
       "group": "⚖️ Legal & Compliance",
       "pages": [
-        "legal/gdpr-compliance",
-        "legal/privacy-policy",
-        "legal/data-processing"
+        "legal/internal-ips",
+        "legal/legal-faqs",
+        "legal/regulations-compliance"
       ]
     },
     {
       "group": "🏢 Company",
       "pages": [
-        "company/about-us",
-        "company/contact",
-        "company/support"
+        "company/business-development-process",
+        "company/server-statistic"
+      ]
+    },
+    {
+      "group": "🆚 Comparison",
+      "pages": [
+        "comparison/ga-alternative-guide"
       ]
     },
     {
       "group": "🔌 API Documentation",
       "pages": [
-        "api/overview",
-        "api/authentication",
-        "api/endpoints",
-        "api/examples"
+        "api/introduction-API-guide",
+        "api/api-acquisition-endpoint",
+        "api/api-authentication",
+        "api/api-complete-documentation",
+        "api/api-endpoints-overview",
+        "api/api-introduction",
+        "api/api-login-endpoint",
+        "api/get-api-token"
       ]
     }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/sealmetrics",
-    "linkedin": "https://linkedin.com/company/sealmetrics",
-    "github": "https://github.com/sealmetrics"
+    "linkedin": "https://linkedin.com/company/sealmetrics"
   },
   "seo": {
     "indexHiddenPages": false
