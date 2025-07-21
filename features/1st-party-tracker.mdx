@@ -1,0 +1,193 @@
+---
+title: "1st Party Tracker"
+description: "Cookie-free, privacy-first tracking solution that bypasses ad blockers"
+---
+
+
+# 1st Party Tracker
+
+The 1st-party tracker by SealMetrics is a cookie-free, privacy-first tracking solution designed to ensure accurate measurement without storing anything on the user's device. This advanced tracking method provides robust analytics while respecting user privacy and bypassing ad blockers.
+
+![Screenshot 2025-07-21 at 13.16.54.png](/images/Screenshot2025-07-21at13.16.54.png)
+
+## What is 1st Party Tracking?
+
+The 1st-party tracker uses a pixel-based approach, similar to previous tracking methods. However, instead of operating from the standard SealMetrics URL (e.g., `app.sealmetrics.com`), the tracker functions from a subdomain linked to your website, such as `random-numbers.yourdomain.com`.
+
+## Key Benefits
+
+### 🚫 Ad Blocker Bypass
+
+Using a 1st-party subdomain, SealMetrics can bypass ad blockers, allowing you to:
+
+- **Collect accurate data** without interruption
+- **Maintain complete analytics** even for privacy-conscious users
+- **Ensure data continuity** across all user segments
+- **Improve measurement accuracy** by capturing previously blocked traffic
+
+### 🔒 Privacy-First Design
+
+- **Cookie-free tracking**: No data stored on user devices
+- **GDPR compliant**: Respects user privacy regulations
+- **No personal data storage**: Focuses on aggregate analytics
+- **Consent-friendly**: Reduces need for cookie consent banners
+
+### 📊 Robust Analytics
+
+This approach provides a **robust, resilient measurement solution** for:
+
+- **Privacy-conscious audiences**: Users who actively block tracking
+- **Ad-blocking users**: Maintain analytics for users with ad blockers
+- **Enterprise environments**: Corporate networks with strict filtering
+- **Mobile users**: Improved tracking on mobile devices with native ad blocking
+
+## How 1st Party Tracking Works
+
+### Traditional 3rd Party Tracking
+
+```
+User Browser → External Tracker (app.sealmetrics.com) → Analytics
+❌ Often blocked by ad blockers
+❌ Flagged as 3rd party tracking
+❌ Requires cookies for user identification
+```
+
+### 1st Party Tracking
+
+```
+User Browser → Your Subdomain (analytics.yourdomain.com) → SealMetrics
+✅ Appears as same-domain request
+✅ Bypasses most ad blockers
+✅ No cookies required
+```
+
+## Technical Implementation
+
+### Subdomain Setup
+
+Your 1st party tracker operates through a subdomain such as:
+
+- `analytics.yourdomain.com`
+- `metrics.yourdomain.com`
+- `tracking.yourdomain.com`
+- `stats.yourdomain.com`
+
+### DNS Configuration
+
+The subdomain is configured to:
+
+1. **Point to SealMetrics infrastructure**
+2. **Maintain your domain authority**
+3. **Appear as first-party requests**
+4. **Bypass third-party blocking rules**
+
+### Pixel Implementation
+
+The tracking pixel loads from your subdomain:
+
+```
+<img src="https://analytics.yourdomain.com/pixel.gif?page=homepage&event=pageview" 
+     width="1" height="1" style="display:none" />
+```
+
+## Advantages Over Traditional Tracking
+
+### Improved Data Collection
+
+- **Higher data accuracy**: Capture 15-30% more traffic typically blocked
+- **Complete user journey**: Track users across entire funnel
+- **Reduced data loss**: Minimize analytics gaps from blocking
+- **Better attribution**: More accurate conversion tracking
+
+### Privacy Compliance
+
+- **No personal data**: No PII stored or transmitted
+- **Aggregate analytics**: Focus on trends and patterns
+- **Regulatory friendly**: GDPR and CCPA compliant
+- **User respect**: Honor privacy preferences while maintaining insights
+
+### Technical Resilience
+
+- **Ad blocker resistant**: Bypasses most blocking mechanisms
+- **Browser friendly**: Works across all modern browsers
+- **Mobile optimized**: Effective on mobile devices
+- **Enterprise compatible**: Functions in corporate environments
+
+## Use Cases and Applications
+
+### E-commerce Analytics
+
+- **Shopping behavior**: Track add-to-cart and checkout events
+- **Product performance**: Monitor product page analytics
+- **Conversion tracking**: Accurate purchase attribution
+- **Customer journey**: Complete funnel analysis
+
+### Content Publishers
+
+- **Article engagement**: Track reading behavior
+- **Content performance**: Monitor page popularity
+- **User flow**: Understand content consumption patterns
+- **Subscription tracking**: Monitor conversion events
+
+### SaaS Platforms
+
+- **Feature usage**: Track in-app behavior
+- **Trial conversions**: Monitor signup and upgrade events
+- **User onboarding**: Analyze onboarding completion
+- **Churn prevention**: Identify at-risk user patterns
+
+### Lead Generation
+
+- **Form completions**: Track form submissions accurately
+- **Content downloads**: Monitor resource engagement
+- **Email signups**: Capture newsletter subscriptions
+- **Webinar attendance**: Track event participation
+
+## Implementation Considerations
+
+### DNS Requirements
+
+- **Subdomain access**: Ability to create DNS records
+- **CNAME configuration**: Point subdomain to SealMetrics
+- **SSL certificate**: Ensure HTTPS for security
+- **TTL settings**: Optimize for performance
+
+### Performance Impact
+
+- **Minimal overhead**: Lightweight pixel implementation
+- **Fast loading**: Optimized for speed
+- **Async loading**: Non-blocking implementation
+
+### Maintenance
+
+- **Automatic updates**: SealMetrics handles infrastructure
+- **Monitoring**: Built-in uptime monitoring
+- **Support**: Technical support for implementation
+- **Documentation**: Complete setup guides
+
+## Privacy and Compliance
+
+### Data Protection
+
+- **Anonymous tracking**: No personal identification
+- **Aggregate reporting**: Focus on trends, not individuals
+- **Data minimization**: Collect only necessary information
+- **Secure transmission**: Encrypted data transfer
+
+### Regulatory Compliance
+
+- **GDPR compliant**: Meets European privacy standards
+- **CCPA friendly**: California privacy law compliant
+- **Cookie law**: Reduces cookie consent requirements
+- **Industry standards**: Follows privacy best practices
+
+### User Control
+
+- **Opt-out options**: Respect user preferences
+- **Transparency**: Clear privacy policy integration
+- **Consent management**: Compatible with consent platforms
+- **Data rights**: Support for user data requests
+
+---
+
+ \<Note\> **Pro Tip**: 1st party tracking typically increases data collection accuracy by 15-30% compared to traditional 3rd party methods, providing more complete analytics for optimization decisions. \</Note\> \<Warning\> 1st party tracker setup requires DNS configuration on your domain. Ensure you have the necessary technical access or coordinate with your IT team for implementation. \</Warning\>

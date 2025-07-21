@@ -1,0 +1,205 @@
+---
+title: "Definitions Guide"
+description: "Key concepts and metrics in SealMetrics analytics explained"
+---
+
+---
+
+# Definitions
+
+### 📊 Entrances
+
+**Definition**: An Entrance is a click with an empty referrer or a referrer with a domain different from your domain.
+
+**How it works**:
+
+- **Direct traffic**: When someone types your URL directly or uses a bookmark
+- **External referrals**: When someone clicks a link from another website
+- **Search engines**: When someone finds your site through search results
+- **Social media**: When someone clicks a link from social platforms
+
+**Example**: If a user comes to your site from Google search, that counts as one entrance.
+
+### 👀 Pageview
+
+**Definition**: How many times a page has been viewed.
+
+**Key points**:
+
+- Each page load counts as one pageview
+- Multiple views by the same user count separately
+- Refreshing a page creates a new pageview
+- Useful for understanding content popularity
+
+**Example**: If 100 people visit your homepage and 50 of them refresh it once, you'll have 150 pageviews.
+
+### 🎯 Conversions
+
+**Definition**: Each time an action marked and assigned by the user has been accomplished. We suggest marking just the purchases as conversion.
+
+**Best practices**:
+
+- **Primary conversions**: Purchases, sign-ups, leads
+- **Focus on value**: Track actions that directly impact business goals
+- **Avoid over-tracking**: Don't mark every small action as a conversion
+- **Business impact**: Choose conversions that matter to your bottom line
+
+**Example**: An e-commerce site should track purchases as conversions, not just product page views.
+
+### 💰 Revenue
+
+**Definition**: The pixel of conversion saves the value of every purchase so you can find the total amount of the purchases in the revenue section.
+
+**Revenue tracking**:
+
+- **Purchase values**: Exact amount of each transaction
+- **Currency support**: Multi-currency tracking available
+- **Attribution**: Revenue attributed to correct traffic sources
+- **Tax handling**: Include or exclude taxes as needed
+
+**Example**: If someone buys a \$50 product and a \$30 product, the revenue is \$80.
+
+### 🔄 Micro Conversion
+
+**Definition**: Each time an action marked and assigned by the user has been accomplished. Ex. Add an item to the cart.
+
+**Common micro conversions**:
+
+- **Add to cart**: Product interest indicator
+- **Newsletter signup**: Lead generation
+- **Video views**: Content engagement
+- **Form starts**: Intent indicators
+- **Download requests**: Content value
+- **Account creation**: User commitment
+
+**Example**: When someone adds a product to cart but doesn't purchase, that's a micro conversion.
+
+### 💸 Cost
+
+**Definition**: The total amount of your marketing investment.
+
+**Cost components**:
+
+- **Advertising spend**: Paid media costs
+- **Agency fees**: Management and service costs
+- **Platform fees**: Technology and software costs
+- **Creative production**: Design and content creation costs
+
+**Example**: If you spend \$1,000 on Google Ads and \$500 on Facebook Ads, your total cost is \$1,500.
+
+### 📈 Conversion Rate
+
+**Definition**: The number of users who converted as a percentage of the total number of users that visited your site.
+
+**Calculation**:
+
+```
+Conversion Rate = (Conversions ÷ Entrances) × 100
+```
+
+**Example calculation**:
+
+- 1,000 entrances
+- 50 conversions
+- Conversion rate = (50 ÷ 1,000) × 100 = 5%
+
+### 🏷️ Conversion Type
+
+**Definition**: The amount for conversion for each type of conversion assigned by you.
+
+**Types of conversions**:
+
+- **Purchase**: E-commerce transactions
+- **Lead**: Contact form submissions
+- **Signup**: Account registrations
+- **Download**: Resource downloads
+- **Subscription**: Newsletter or service subscriptions
+
+**Value assignment**: Each type can have different values based on business impact.
+
+### 🥇 Top Medium
+
+**Definition**: The mediums that guarantee the most affluence (using a UTM that needs to be reassigned) for entrances and conversions.
+
+**Common mediums**:
+
+- **Organic**: SEO traffic from search engines
+- **CPC**: Paid search advertising
+- **Social**: Social media traffic
+- **Email**: Email marketing campaigns
+- **Referral**: Traffic from other websites
+- **Direct**: Direct website visits
+
+### 🌟 Top Sources
+
+**Definition**: The main sources from which your traffic comes.
+
+**Traffic sources examples**:
+
+- **Google**: Search engine traffic
+- **Facebook**: Social media traffic
+- **LinkedIn**: Professional network traffic
+- **Newsletter**: Email campaign traffic
+- **Partner sites**: Referral traffic
+
+## Advanced Metrics
+
+### ROAS (Return on Ad Spend)
+
+**Calculation**:
+
+```
+ROAS = Revenue ÷ Cost
+```
+
+**Interpretation**:
+
+- **ROAS \> 3:1**: Generally profitable
+- **ROAS 2:1-3:1**: Moderate performance
+- **ROAS \< 2:1**: Needs optimization
+
+### Customer Lifetime Value (CLV)
+
+While not directly shown in basic reports, this can be calculated using:
+
+- Average order value
+- Purchase frequency
+- Customer retention rate
+
+### Cost Per Acquisition (CPA)
+
+**Calculation**:
+
+```
+CPA = Cost ÷ Conversions
+```
+
+**Example**: \$1,000 cost with 50 conversions = \$20 CPA
+
+## Metric Relationships
+
+### Funnel Metrics
+
+Understanding how metrics relate in a typical conversion funnel:
+
+```
+Entrances → Pageviews → Micro Conversions → Conversions → Revenue
+```
+
+## Common Calculations
+
+### Performance Comparisons
+
+- **Period-over-period**: Compare current vs. previous period
+- **Channel comparison**: Compare performance across sources
+- **Campaign analysis**: Compare different marketing campaigns
+
+---
+
+<Tip>
+  Focus on the metrics that directly impact your business goals. Not every metric needs constant monitoring - choose the ones that help you make better decisions
+</Tip>
+
+<Note>
+  Ensure consistent tracking setup across all pages and campaigns. Inconsistent implementation can lead to misleading metrics and poor decision-making
+</Note>
