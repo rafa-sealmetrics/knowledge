@@ -24,7 +24,7 @@
     "name": "Start Free Trial",
     "url": "https://app.sealmetrics.com/"
   },
-  "domain": "knowledge.sealmetrics.com",
+  "domain": "hub.sealmetrics.com",
   "navigation": [
     {
       "group": "🚀 Getting Started",
@@ -125,7 +125,8 @@
     {
       "group": "🆚 Comparison",
       "pages": [
-        "comparison/ga-alternative-guide"
+        "comparison/ga-alternative-guide",
+        "comparison/sealmetrics-vs-competitors"
       ]
     },
     {
