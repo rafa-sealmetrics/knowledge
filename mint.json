@@ -1,160 +1,241 @@
 {
-  "name": "Sealmetrics Knowledge Hub",
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "Sealmetrics Knowledge Base",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/sealmetrics-logo-dark.svg",
+    "light": "/logo/sealmetrics-logo-light.svg",
+    "href": "https://sealmetrics.com"
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#00B25F",
-    "light": "#00B260",
-    "dark": "#004499"
+    "primary": "#22C55E",
+    "light": "#34D399",
+    "dark": "#16A34A",
+    "background": {
+      "light": "#FFFFFF",
+      "dark": "#0F172A"
+    },
+    "foreground": {
+      "light": "#1E293B",
+      "dark": "#F1F5F9"
+    },
+    "muted": {
+      "light": "#F8FAFC",
+      "dark": "#1E293B"
+    },
+    "mutedForeground": {
+      "light": "#64748B",
+      "dark": "#94A3B8"
+    },
+    "card": {
+      "light": "#FFFFFF",
+      "dark": "#1E293B"
+    },
+    "cardForeground": {
+      "light": "#1E293B",
+      "dark": "#F1F5F9"
+    },
+    "popover": {
+      "light": "#FFFFFF",
+      "dark": "#1E293B"
+    },
+    "popoverForeground": {
+      "light": "#1E293B",
+      "dark": "#F1F5F9"
+    },
+    "border": {
+      "light": "#E2E8F0",
+      "dark": "#334155"
+    },
+    "input": {
+      "light": "#E2E8F0",
+      "dark": "#334155"
+    },
+    "secondary": {
+      "light": "#F1F5F9",
+      "dark": "#334155"
+    },
+    "secondaryForeground": {
+      "light": "#0F172A",
+      "dark": "#F1F5F9"
+    },
+    "accent": {
+      "light": "#06B6D4",
+      "dark": "#0891B2"
+    },
+    "accentForeground": {
+      "light": "#FFFFFF",
+      "dark": "#F1F5F9"
+    },
+    "destructive": {
+      "light": "#EF4444",
+      "dark": "#DC2626"
+    },
+    "destructiveForeground": {
+      "light": "#FFFFFF",
+      "dark": "#F1F5F9"
+    },
+    "ring": {
+      "light": "#22C55E",
+      "dark": "#16A34A"
+    },
+    "anchors": {
+      "from": "#22C55E",
+      "to": "#06B6D4"
+    }
   },
   "topbarLinks": [
     {
-      "name": "Sealmetrics",
-      "url": "https://sealmetrics.com"
+      "name": "Platform",
+      "url": "https://sealmetrics.com/platform"
     },
     {
-      "name": "App",
-      "url": "https://app.sealmetrics.com"
+      "name": "Pricing",
+      "url": "https://sealmetrics.com/pricing"
+    },
+    {
+      "name": "Support",
+      "url": "mailto:support@sealmetrics.com"
     }
   ],
   "topbarCtaButton": {
-    "name": "Start Free Trial",
-    "url": "https://app.sealmetrics.com/"
+    "name": "Try Sealmetrics",
+    "url": "https://app.sealmetrics.com/signup",
+    "style": "roundedFull"
   },
-  "domain": "hub.sealmetrics.com",
+  "tabs": [
+    {
+      "name": "API Reference",
+      "url": "api-reference"
+    },
+    {
+      "name": "Guides",
+      "url": "guides"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Dashboard",
+      "icon": "chart-line",
+      "url": "https://app.sealmetrics.com"
+    },
+    {
+      "name": "Website",
+      "icon": "globe",
+      "url": "https://sealmetrics.com"
+    },
+    {
+      "name": "Community",
+      "icon": "discord",
+      "url": "https://discord.gg/sealmetrics"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/sealmetrics"
+    }
+  ],
   "navigation": [
     {
-      "group": "🚀 Getting Started",
+      "group": "Comenzar",
       "pages": [
         "introduction",
-        "what-is-sealmetrics",
-        "quickstart"
+        "Getting-Started/introduction",
+        "Getting-Started/first-steps",
+        "Getting-Started/Reports"
       ]
     },
     {
-      "group": "📋 First Steps",
+      "group": "Integración API",
       "pages": [
-        "first-steps/Cookieless-Tracking",
-        "first-steps/account-setup",
-        "first-steps/first-party-tracker", 
-        "first-steps/how-sealmetrics-works",
-        "first-steps/how-superprivacy-tracking-works",
-        "first-steps/sealmetrics-difference-post",
-        "first-steps/setting-up-trackers-in-sealmetrics",
-        "first-steps/goals-setup"
+        "API-Integration/introduction-API-guide",
+        "API-Integration/api-introduction",
+        "API-Integration/api-authentication",
+        "API-Integration/get-api-token",
+        "API-Integration/api-endpoints-overview",
+        "API-Integration/api-login-endpoint",
+        "API-Integration/api-acquisition-endpoint",
+        "API-Integration/api-complete-documentation"
       ]
     },
     {
-      "group": "⚙️ Features",
+      "group": "Plataforma",
       "pages": [
-        "features/1st-party-tracker",
-        "features/acquisition",
-        "features/Cost-Calculator",
-        "features/Funnel",
-        "features/HowtoAddVATNumberinMyInvoices",
-        "features/IP-Access-Control",
-        "features/ROAS-Evolution",
-        "features/add-domains",
-        "features/dashboard",
-        "features/definitions-guide"
+        "Platform"
       ]
     },
     {
-      "group": "🖥️ Platform", 
+      "group": "Métricas e Insights",
       "pages": [
-        "platform/Create-Admin-User",
-        "platform/UpdateBillingInfo",
-        "platform/add-new-account",
-        "platform/add-new-user",
-        "platform/affiliate-link",
-        "platform/bot-filtering",
-        "platform/cancel-account",
-        "platform/change-password",
-        "platform/change-time-zone",
-        "platform/content-grouping",
-        "platform/data-consolidation",
-        "platform/delete-account",
-        "platform/find-account-id",
-        "platform/gtm-msr-appspot",
-        "platform/modifiy-invoice",
-        "platform/payment-source",
-        "platform/real-time-data",
-        "platform/subdomain-guide"
+        "Metrics-Insights/Understanding Analytics Data",
+        "Metrics-Insights/term-definition",
+        "Metrics-Insights/entrance-hits",
+        "Metrics-Insights/ga4-more-hits",
+        "Metrics-Insights/how-cookieless-tracking",
+        "Metrics-Insights/last-click-attribution",
+        "Metrics-Insights/referral-vs-direct-traffic",
+        "Metrics-Insights/seo-tracking",
+        "Metrics-Insights/social-media-tracking",
+        "Metrics-Insights/google-ads-campaign",
+        "Metrics-Insights/change-utm-parameters",
+        "Metrics-Insights/loss-traffic",
+        "Metrics-Insights/not-set-value",
+        "Metrics-Insights/rejoined-traffic"
       ]
     },
     {
-      "group": "📊 Metric Insights",
+      "group": "Características",
       "pages": [
-        "metrics/ajax-forms",
-        "metrics/change-utm-parameters",
-        "metrics/definitions-terminology",
-        "metrics/entrance-hits",
-        "metrics/ga4-more-hits",
-        "metrics/google-ads-campaign",
-        "metrics/how-cookieless-tracking",
-        "metrics/last-click-attribution",
-        "metrics/lost-traffic",
-        "metrics/not-set-value",
-        "metrics/react-sites-tracking",
-        "metrics/referral-vs-direct-traffic",
-        "metrics/rejoined-traffic",
-        "metrics/seo-tracking",
-        "metrics/social-media-campaigns",
-        "metrics/spa-tracking",
-        "metrics/term-definition"
+        "features"
       ]
     },
     {
-      "group": "⚖️ Legal & Compliance",
+      "group": "Casos de Uso",
       "pages": [
-        "legal/internal-ips",
-        "legal/legal-faqs",
-        "legal/regulations-compliance"
+        "Use-Cases"
       ]
     },
     {
-      "group": "🏢 Company",
+      "group": "Comparación",
       "pages": [
-        "company/business-development-process",
-        "company/server-statistic"
+        "comparison"
       ]
     },
     {
-      "group": "🆚 Comparison",
+      "group": "Empresa",
       "pages": [
-        "comparison/ga-alternative-guide",
-        "comparison/sealmetrics-vs-competitors"
+        "company"
       ]
     },
     {
-      "group": "🔌 API Documentation",
+      "group": "Legal",
       "pages": [
-        "api/introduction-API-guide",
-        "api/api-acquisition-endpoint",
-        "api/api-authentication",
-        "api/api-complete-documentation",
-        "api/api-endpoints-overview",
-        "api/api-introduction",
-        "api/api-login-endpoint",
-        "api/get-api-token"
+        "legal"
       ]
     }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/sealmetrics",
-    "linkedin": "https://linkedin.com/company/sealmetrics"
+    "github": "https://github.com/sealmetrics",
+    "linkedin": "https://www.linkedin.com/company/sealmetrics",
+    "discord": "https://discord.gg/sealmetrics"
   },
-  "seo": {
-    "indexHiddenPages": false
-  },
-  "search": {
-    "prompt": "Search Sealmetrics documentation..."
+  "analytics": {
+    "sealmetrics": {
+      "trackingId": "SM-KNOWLEDGE-BASE"
+    }
   },
   "feedback": {
     "thumbsRating": true,
-    "suggestEdit": true
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
+  "search": {
+    "prompt": "Buscar en la documentación de Sealmetrics..."
+  },
+  "modeToggle": {
+    "default": "light",
+    "isHidden": false
   }
 }
+

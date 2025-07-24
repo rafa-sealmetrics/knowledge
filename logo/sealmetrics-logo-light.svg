@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" width="200" height="40">
+  <defs>
+    <style>
+      .logo-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 700; }
+      .seal { fill: #22C55E; }
+      .metrics { fill: #1E3A8A; }
+    </style>
+  </defs>
+  <text x="10" y="28" font-size="20" class="logo-text seal">Seal</text>
+  <text x="70" y="28" font-size="20" class="logo-text metrics">Metrics</text>
+</svg>
+

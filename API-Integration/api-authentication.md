@@ -1,156 +1,131 @@
 ---
-title: "Authentication"
-description: "Learn how to authenticate with the SealMetrics API using Bearer tokens"
+title: "Autenticación de la API de Sealmetrics"
+description: "Aprende cómo autenticarte correctamente con la API de Sealmetrics usando tokens y claves. Guía completa de seguridad y mejores prácticas."
+keywords: ['authentication', 'api token', 'security', 'api key', 'authorization', 'sealmetrics api', 'bearer token']
 ---
 
-# Authentication
+# API Authentication
 
-## Overview
+Learn how to securely authenticate with the Sealmetrics API using API tokens and implement proper security practices.
 
-SealMetrics API uses Bearer token authentication to secure all API requests. Before you can access any data endpoints, you must obtain an authentication token through the login process. This token must be included in the Authorization header of all subsequent API requests.
+## Authentication Methods
 
-## Login Endpoint
+### API Token Authentication
 
-To authenticate with the API and obtain a token, you need to make a POST request to the login endpoint.
+Sealmetrics uses Bearer token authentication for API access. All API requests must include a valid API token in the Authorization header.
 
-**Endpoint:** `https://app.sealmetrics.com/api/auth/login`
+### Token Format
 
-### Request Headers
-
-| Header | Value |
-|--------|-------|
-| Content-Type | application/json |
-
-### Request Body
-
-The login request requires your email and password in JSON format:
-
-```json
-{
-  "email": "user@example.com",
-  "password": "your_password"
-}
+```
+Authorization: Bearer YOUR_API_TOKEN
 ```
 
-### Example Request
+## Getting Your API Token
 
-<CodeGroup>
+### Step 1: Access Account Settings
+1. Log into your Sealmetrics dashboard
+2. Navigate to Account Settings
+3. Click on the "API" or "Integrations" section
 
-```bash cURL
-curl --location 'https://app.sealmetrics.com/api/auth/login' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "email": "demo@example.com",
-  "password": "demo"
-}'
-```
+### Step 2: Generate Token
+1. Click "Generate New Token" or "Create API Token"
+2. Provide a descriptive name for the token
+3. Set appropriate permissions if available
+4. Copy the generated token immediately
 
-```python Python
-import requests
-import json
-
-url = "https://app.sealmetrics.com/api/auth/login"
-
-payload = json.dumps({
-  "email": "demo@example.com",
-  "password": "demo"
-})
-
-headers = {
-  'Content-Type': 'application/json'
-}
-
-response = requests.request("POST", url, headers=headers, data=payload)
-print(response.text)
-```
-
-```javascript JavaScript
-const myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
-const raw = JSON.stringify({
-  "email": "demo@example.com",
-  "password": "demo"
-});
-
-const requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
-
-fetch("https://app.sealmetrics.com/api/auth/login", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
-```
-
-</CodeGroup>
-
-## Response
-
-Upon successful authentication, the server will respond with a JSON object containing your access token, token type, and expiration information:
-
-```json
-{
-  "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6ImpoaS1Nzg5MzQzIn0...",
-  "token_type": "Bearer",
-  "expires_at": "2025-07-09T18:14:44.000000Z"
-}
-```
-
-## Using the Token
-
-For all subsequent API requests, you must include the obtained token in the Authorization header using the Bearer scheme:
-
-### Required Headers for Authenticated Requests
-
-| Header | Value |
-|--------|-------|
-| Authorization | Bearer {your_access_token} |
-| Accept | application/json |
-| Connection | keep-alive |
-| Accept-Encoding | gzip, deflate, br |
-
-### Example Authenticated Request
-
-```bash
-curl --location 'https://app.sealmetrics.com/api/report/acquisition?account_id=000000000000000000001234&report_type=Source&date_range=20230601,20230630&skip=0&limit=100' \
---header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI:ImpoaS1Nzg5MzQzIn0...' \
---header 'Accept: application/json' \
---header 'Connection: keep-alive' \
---header 'Accept-Encoding: gzip, deflate, br'
-```
-
-## Token Expiration and Renewal
-
-The authentication token has an expiration time, which is included in the `expires_at` field of the login response. To maintain uninterrupted access to the API, you should:
-
-1. Store the expiration time along with the token
-2. Check the token's validity before making API requests
-3. If the token is expired or about to expire, request a new token using the login endpoint
-4. Update your stored token with the new one
+### Step 3: Secure Storage
+- Store the token in environment variables
+- Never commit tokens to version control
+- Use secure configuration management
+- Implement token rotation policies
 
 ## Security Best Practices
 
-To ensure the security of your API access:
+### Token Management
+- **Unique tokens**: Use different tokens for different applications
+- **Regular rotation**: Rotate tokens periodically
+- **Immediate revocation**: Revoke compromised tokens immediately
+- **Minimal permissions**: Grant only necessary permissions
 
-1. **Never hardcode credentials** in your application code
-2. **Store API credentials securely** using environment variables or a secure credential manager
-3. **Implement proper error handling** for authentication failures
-4. **Set up automatic token renewal** before expiration
-5. **Use HTTPS** for all API communications
-6. **Limit access** to your authentication token within your application
-7. **Implement proper logging** for authentication events for audit purposes
+### Implementation Security
+- **HTTPS only**: Always use HTTPS for API calls
+- **Server-side only**: Never expose tokens in client-side code
+- **Secure storage**: Use secure vaults for token storage
+- **Access logging**: Log API access for security monitoring
 
-## Troubleshooting Authentication Issues
+## Authentication Examples
 
-If you encounter authentication problems:
+### cURL Example
+```bash
+curl -H "Authorization: Bearer YOUR_API_TOKEN" \
+     https://api.sealmetrics.com/v1/accounts
+```
 
-- **401 Unauthorized**: Verify that you're using the correct email and password
-- **Token Expired**: Check if your token has expired and request a new one
-- **Invalid Token Format**: Ensure you're correctly formatting the Authorization header
-- **Connection Issues**: Verify your network connection and the API service status
+### JavaScript Example
+```javascript
+const response = await fetch('https://api.sealmetrics.com/v1/accounts', {
+  headers: {
+    'Authorization': 'Bearer YOUR_API_TOKEN',
+    'Content-Type': 'application/json'
+  }
+});
+```
 
-If problems persist, please contact SealMetrics API support with details about the specific error messages you're receiving.
+### Python Example
+```python
+import requests
+
+headers = {
+    'Authorization': 'Bearer YOUR_API_TOKEN',
+    'Content-Type': 'application/json'
+}
+
+response = requests.get('https://api.sealmetrics.com/v1/accounts', headers=headers)
+```
+
+## Error Handling
+
+### Common Authentication Errors
+
+#### 401 Unauthorized
+- **Cause**: Invalid or missing API token
+- **Solution**: Check token format and validity
+
+#### 403 Forbidden
+- **Cause**: Token lacks required permissions
+- **Solution**: Verify token permissions or generate new token
+
+#### 429 Too Many Requests
+- **Cause**: Rate limit exceeded
+- **Solution**: Implement proper rate limiting and retry logic
+
+## Token Permissions
+
+### Available Scopes
+- **read:analytics**: Read analytics data
+- **read:accounts**: Access account information
+- **write:settings**: Modify account settings
+- **admin**: Full administrative access
+
+### Permission Management
+- Request minimal required permissions
+- Regularly audit token permissions
+- Use separate tokens for different use cases
+- Document token purposes and permissions
+
+## Troubleshooting
+
+### Token Validation
+1. Verify token format (Bearer prefix)
+2. Check token expiration
+3. Confirm account access
+4. Test with simple API call
+
+### Common Issues
+- **Whitespace**: Remove extra spaces from token
+- **Encoding**: Ensure proper character encoding
+- **Headers**: Verify correct header format
+- **HTTPS**: Always use secure connections
+
+Remember to keep your API tokens secure and never share them publicly. Implement proper error handling and retry logic in your applications.
+

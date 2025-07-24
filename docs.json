@@ -1,0 +1,336 @@
+{
+  "name": "Sealmetrics Knowledge Base",
+  "description": "Documentación completa de Sealmetrics - La plataforma de análisis de marketing más avanzada",
+  "version": "1.0.0",
+  "baseUrl": "https://docs.sealmetrics.com",
+  "logo": {
+    "light": "/logo/sealmetrics-logo-light.svg",
+    "dark": "/logo/sealmetrics-logo-dark.svg",
+    "href": "https://sealmetrics.com"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#0EA5E9",
+    "light": "#38BDF8",
+    "dark": "#0284C7",
+    "background": {
+      "light": "#FFFFFF",
+      "dark": "#0F172A"
+    },
+    "foreground": {
+      "light": "#1E293B",
+      "dark": "#F1F5F9"
+    }
+  },
+  "theme": {
+    "layout": "topnav",
+    "primaryTab": {
+      "name": "Documentation"
+    }
+  },
+  "topbar": {
+    "title": "Sealmetrics Docs",
+    "logo": {
+      "light": "/logo/sealmetrics-logo-light.svg",
+      "dark": "/logo/sealmetrics-logo-dark.svg"
+    },
+    "links": [
+      {
+        "name": "Dashboard",
+        "url": "https://app.sealmetrics.com",
+        "type": "cta"
+      },
+      {
+        "name": "Support",
+        "url": "mailto:support@sealmetrics.com"
+      }
+    ]
+  },
+  "sidebar": {
+    "groups": [
+      {
+        "group": "Introducción",
+        "pages": [
+          {
+            "title": "Bienvenido a Sealmetrics",
+            "href": "/introduction",
+            "description": "Guía completa para comenzar con Sealmetrics"
+          }
+        ]
+      },
+      {
+        "group": "Primeros Pasos",
+        "pages": [
+          {
+            "title": "Introducción",
+            "href": "/Getting-Started/introduction",
+            "description": "Conceptos básicos de Sealmetrics"
+          },
+          {
+            "title": "Primeros Pasos",
+            "href": "/Getting-Started/first-steps",
+            "description": "Configuración inicial y setup"
+          },
+          {
+            "title": "Reportes",
+            "href": "/Getting-Started/Reports",
+            "description": "Entendiendo los reportes"
+          }
+        ]
+      },
+      {
+        "group": "Integración API",
+        "pages": [
+          {
+            "title": "Guía de Introducción a la API",
+            "href": "/API-Integration/introduction-API-guide",
+            "description": "Introducción completa a la API"
+          },
+          {
+            "title": "Introducción a la API",
+            "href": "/API-Integration/api-introduction",
+            "description": "Conceptos básicos de la API"
+          },
+          {
+            "title": "Autenticación",
+            "href": "/API-Integration/api-authentication",
+            "description": "Métodos de autenticación"
+          },
+          {
+            "title": "Obtener Token de API",
+            "href": "/API-Integration/get-api-token",
+            "description": "Generar y gestionar tokens"
+          },
+          {
+            "title": "Resumen de Endpoints",
+            "href": "/API-Integration/api-endpoints-overview",
+            "description": "Todos los endpoints disponibles"
+          },
+          {
+            "title": "Endpoint de Login",
+            "href": "/API-Integration/api-login-endpoint",
+            "description": "Autenticación de usuarios"
+          },
+          {
+            "title": "Endpoint de Adquisición",
+            "href": "/API-Integration/api-acquisition-endpoint",
+            "description": "Tracking de adquisición"
+          },
+          {
+            "title": "Documentación Completa",
+            "href": "/API-Integration/api-complete-documentation",
+            "description": "Referencia completa de la API"
+          }
+        ]
+      },
+      {
+        "group": "Plataforma",
+        "pages": [
+          {
+            "title": "Características de la Plataforma",
+            "href": "/Platform",
+            "description": "Funcionalidades principales"
+          }
+        ]
+      },
+      {
+        "group": "Métricas e Insights",
+        "pages": [
+          {
+            "title": "Entendiendo los Datos de Analytics",
+            "href": "/Metrics-Insights/Understanding Analytics Data",
+            "description": "Conceptos fundamentales"
+          },
+          {
+            "title": "Definición de Términos",
+            "href": "/Metrics-Insights/term-definition",
+            "description": "Glosario de términos"
+          },
+          {
+            "title": "Entrance Hits",
+            "href": "/Metrics-Insights/entrance-hits",
+            "description": "Puntos de entrada de usuarios"
+          },
+          {
+            "title": "Más Hits que GA4",
+            "href": "/Metrics-Insights/ga4-more-hits",
+            "description": "Comparación con Google Analytics"
+          },
+          {
+            "title": "Tracking Sin Cookies",
+            "href": "/Metrics-Insights/how-cookieless-tracking",
+            "description": "Métodos de tracking avanzados"
+          },
+          {
+            "title": "Atribución de Último Clic",
+            "href": "/Metrics-Insights/last-click-attribution",
+            "description": "Modelos de atribución"
+          },
+          {
+            "title": "Tráfico de Referencia vs Directo",
+            "href": "/Metrics-Insights/referral-vs-direct-traffic",
+            "description": "Análisis de fuentes de tráfico"
+          },
+          {
+            "title": "Tracking de SEO",
+            "href": "/Metrics-Insights/seo-tracking",
+            "description": "Análisis de tráfico orgánico"
+          },
+          {
+            "title": "Tracking de Redes Sociales",
+            "href": "/Metrics-Insights/social-media-tracking",
+            "description": "Analytics de social media"
+          },
+          {
+            "title": "Campañas de Google Ads",
+            "href": "/Metrics-Insights/google-ads-campaign",
+            "description": "Integración con Google Ads"
+          },
+          {
+            "title": "Modificar Parámetros UTM",
+            "href": "/Metrics-Insights/change-utm-parameters",
+            "description": "Configuración de UTMs"
+          },
+          {
+            "title": "Pérdida de Tráfico",
+            "href": "/Metrics-Insights/loss-traffic",
+            "description": "Análisis de caídas de tráfico"
+          },
+          {
+            "title": "Valores 'Not Set'",
+            "href": "/Metrics-Insights/not-set-value",
+            "description": "Interpretación de datos faltantes"
+          },
+          {
+            "title": "Tráfico Reunido",
+            "href": "/Metrics-Insights/rejoined-traffic",
+            "description": "Análisis de tráfico consolidado"
+          }
+        ]
+      },
+      {
+        "group": "Características",
+        "pages": [
+          {
+            "title": "Características Principales",
+            "href": "/features",
+            "description": "Funcionalidades de Sealmetrics"
+          }
+        ]
+      },
+      {
+        "group": "Casos de Uso",
+        "pages": [
+          {
+            "title": "Casos de Uso",
+            "href": "/Use-Cases",
+            "description": "Ejemplos prácticos de implementación"
+          }
+        ]
+      },
+      {
+        "group": "Comparación",
+        "pages": [
+          {
+            "title": "Comparación con Competidores",
+            "href": "/comparison",
+            "description": "Ventajas competitivas"
+          }
+        ]
+      },
+      {
+        "group": "Empresa",
+        "pages": [
+          {
+            "title": "Acerca de Sealmetrics",
+            "href": "/company",
+            "description": "Información corporativa"
+          }
+        ]
+      },
+      {
+        "group": "Legal",
+        "pages": [
+          {
+            "title": "Términos Legales",
+            "href": "/legal",
+            "description": "Políticas y términos de uso"
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "twitter": "https://twitter.com/sealmetrics",
+      "github": "https://github.com/sealmetrics",
+      "linkedin": "https://www.linkedin.com/company/sealmetrics"
+    },
+    "links": [
+      {
+        "title": "Producto",
+        "links": [
+          {
+            "name": "Dashboard",
+            "url": "https://app.sealmetrics.com"
+          },
+          {
+            "name": "Características",
+            "url": "/features"
+          },
+          {
+            "name": "Precios",
+            "url": "https://sealmetrics.com/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Recursos",
+        "links": [
+          {
+            "name": "Documentación",
+            "url": "/introduction"
+          },
+          {
+            "name": "API Reference",
+            "url": "/API-Integration/introduction-API-guide"
+          },
+          {
+            "name": "Casos de Uso",
+            "url": "/Use-Cases"
+          }
+        ]
+      },
+      {
+        "title": "Soporte",
+        "links": [
+          {
+            "name": "Centro de Ayuda",
+            "url": "https://help.sealmetrics.com"
+          },
+          {
+            "name": "Contacto",
+            "url": "mailto:support@sealmetrics.com"
+          },
+          {
+            "name": "Estado del Sistema",
+            "url": "https://status.sealmetrics.com"
+          }
+        ]
+      }
+    ]
+  },
+  "analytics": {
+    "gtag": {
+      "measurementId": "G-XXXXXXXXXX"
+    },
+    "sealmetrics": {
+      "trackingId": "SM-XXXXXXXXXX"
+    }
+  },
+  "seo": {
+    "indexable": true,
+    "nofollow": false
+  }
+}
+

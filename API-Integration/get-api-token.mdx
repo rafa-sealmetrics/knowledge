@@ -1,184 +1,246 @@
 ---
-title: "How to obtain your API token from the SealMetrics platform"
-description: "Get your API token for programmatic access to SealMetrics data"
+title: "Cómo Obtener tu Token de API de Sealmetrics"
+description: "Guía paso a paso para generar y gestionar tus tokens de API de Sealmetrics de forma segura. Aprende las mejores prácticas de seguridad."
+keywords: ['api token', 'generate token', 'api access', 'authentication', 'security', 'sealmetrics api', 'token management', 'api key']
 ---
 
----
+# Getting Your Sealmetrics API Token
 
-API tokens provide secure programmatic access to your SealMetrics data, enabling integrations with custom applications, business intelligence tools, and automated reporting systems.
+Learn how to generate, manage, and secure your Sealmetrics API tokens for programmatic access to your analytics data.
 
 ## What is an API Token?
 
-### Purpose and Function
-
-- **Authentication**: Secure way to authenticate API requests
-- **Access control**: Controls what data and operations are available
-- **Integration enablement**: Allows third-party applications to access your data
-- **Automation**: Enables automated reporting and data processing
+An API token is a secure credential that allows applications to access your Sealmetrics data programmatically. It acts as a digital key that authenticates your requests to our API.
 
 ### Token Characteristics
-
-- **Unique identifier**: Each token is unique to your account
-- **Secure format**: Long, randomly generated string
-- **Scope-limited**: Can be limited to specific permissions
-- **Revocable**: Can be disabled or regenerated if compromised
+- **Unique Identifier**: Each token is unique to your account
+- **Secure Access**: Provides authenticated access to your data
+- **Configurable Permissions**: Can be limited to specific data types
+- **Revocable**: Can be disabled or regenerated at any time
 
 ## Step-by-Step Token Generation
 
-### Step 1: Access Account Settings
+### Step 1: Access Your Dashboard
+1. Log into your Sealmetrics account
+2. Navigate to the main dashboard
+3. Ensure you have admin or API access permissions
 
-1. Log into your SealMetrics dashboard
-2. Click on your profile/user name in the top-right corner
-3. Select "Account Settings" or "Profile Settings" from the dropdown
-4. Navigate to the "Connectors" section
+### Step 2: Navigate to API Settings
+1. Click on your profile icon (top right)
+2. Select "Account Settings" from dropdown
+3. Click on "API & Integrations" tab
+4. Look for "API Tokens" section
 
-### Step 2: Generate API Token
+### Step 3: Create New Token
+1. Click "Generate New Token" button
+2. Provide a descriptive name for the token
+   - Example: "Marketing Dashboard Integration"
+   - Example: "Monthly Reporting Script"
+   - Example: "CRM Data Sync"
 
-1. Look for "API Tokens" or "API Access" section
-2. Click "Generate New Token" or "Create API Token"
-3. Click "Copy Token"
+### Step 4: Configure Permissions
+Select the appropriate permissions for your use case:
 
-### Step 3: Secure Your Token
+#### Read Permissions
+- **Analytics Data**: Access to traffic and conversion data
+- **Account Info**: Basic account information
+- **Reports**: Access to generated reports
 
-1. **Copy immediately**: Copy the token as soon as it's generated
-2. **Store securely**: Save in a secure location (password manager, environment variables)
-3. **Document usage**: Record what the token is used for
-4. **Test access**: Verify the token works with a test API call
+#### Write Permissions
+- **Goals**: Create and modify conversion goals
+- **Settings**: Update account settings
+- **Users**: Manage team member access
 
-## Token Management
+### Step 5: Generate and Copy Token
+1. Click "Generate Token"
+2. **Important**: Copy the token immediately
+3. Store it securely (you won't see it again)
+4. Click "Done" to complete the process
 
-### Security Best Practices
+## Token Management Best Practices
 
-- **Unique names**: Use descriptive, unique names for each token
-- **Principle of least privilege**: Grant only necessary permissions
-- **Regular rotation**: Generate new tokens periodically
-- **Monitor usage**: Check token usage logs regularly
-- **Immediate revocation**: Revoke compromised tokens immediately
+### Naming Conventions
+Use descriptive names that indicate:
+- **Purpose**: What the token is used for
+- **Application**: Which app or script uses it
+- **Environment**: Production, staging, or development
+- **Team**: Which team member or department owns it
 
-### Multiple Tokens
+#### Good Examples
+- `production-dashboard-readonly`
+- `marketing-reports-monthly`
+- `crm-integration-fullaccess`
+- `dev-testing-limited`
 
-- **Different purposes**: Create separate tokens for different applications
-- **Team members**: Individual tokens for team members when needed
-- **Environment separation**: Different tokens for development, staging, and production
-- **Client projects**: Separate tokens for different client integrations
+#### Poor Examples
+- `token1`
+- `mytoken`
+- `test`
+- `backup`
 
-## Using Your API Token
+### Security Guidelines
 
-### Authentication Header
+#### Storage Security
+- **Environment Variables**: Store in environment variables
+- **Secret Management**: Use dedicated secret management tools
+- **No Version Control**: Never commit tokens to Git repositories
+- **Encrypted Storage**: Encrypt tokens at rest
 
-Include your token in API requests using the Authorization header:
+#### Access Control
+- **Principle of Least Privilege**: Grant minimal necessary permissions
+- **Regular Audits**: Review token usage regularly
+- **Team Access**: Limit who can generate tokens
+- **Documentation**: Document token purposes and owners
 
+#### Rotation Policy
+- **Regular Rotation**: Rotate tokens every 90 days
+- **Immediate Rotation**: Rotate if potentially compromised
+- **Planned Rotation**: Schedule rotation during maintenance windows
+- **Emergency Procedures**: Have emergency rotation procedures
+
+## Using Your Token
+
+### Authentication Header Format
 ```
-Authorization: Bearer YOUR_API_TOKEN_HERE
+Authorization: Bearer YOUR_API_TOKEN
 ```
 
-### Example API Call
+### Example API Calls
 
-```
-curl -H "Authorization: Bearer YOUR_API_TOKEN" \
+#### cURL Example
+```bash
+curl -H "Authorization: Bearer sm_1234567890abcdef" \
      -H "Content-Type: application/json" \
-     https://app.sealmetrics.com/api/v1/accounts
+     https://api.sealmetrics.com/v1/accounts
 ```
 
-### Programming Languages
+#### JavaScript Example
+```javascript
+const token = process.env.SEALMETRICS_API_TOKEN;
 
-**Python example:**
-
+const response = await fetch('https://api.sealmetrics.com/v1/analytics', {
+  headers: {
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
+  }
+});
 ```
+
+#### Python Example
+```python
+import os
 import requests
 
+token = os.environ.get('SEALMETRICS_API_TOKEN')
 headers = {
-    'Authorization': 'Bearer YOUR_API_TOKEN',
+    'Authorization': f'Bearer {token}',
     'Content-Type': 'application/json'
 }
 
-response = requests.get('https://app.sealmetrics.com/api/v1/accounts', headers=headers)
+response = requests.get('https://api.sealmetrics.com/v1/analytics', headers=headers)
 ```
 
-**JavaScript example:**
+## Token Permissions Explained
 
-```
-const headers = {
-    'Authorization': 'Bearer YOUR_API_TOKEN',
-    'Content-Type': 'application/json'
-};
+### Read-Only Access
+Perfect for:
+- Dashboard applications
+- Reporting tools
+- Data visualization
+- Business intelligence tools
 
-fetch('https://app.sealmetrics.com/api/v1/accounts', { headers })
-    .then(response => response.json())
-    .then(data => console.log(data));
-```
+**Permissions Included**:
+- View analytics data
+- Access account information
+- Download reports
+- Read goal configurations
 
-## Common Use Cases
+### Full Access
+Required for:
+- Administrative tools
+- Account management applications
+- Goal configuration tools
+- User management systems
 
-### Business Intelligence Integration
+**Permissions Included**:
+- All read permissions
+- Create/modify goals
+- Update account settings
+- Manage team members
+- Configure integrations
 
-- **Data warehousing**: Import SealMetrics data into your data warehouse
-- **Custom dashboards**: Build company-specific analytics dashboards
-- **Automated reporting**: Generate scheduled reports for stakeholders
-- **KPI monitoring**: Track key performance indicators automatically
+### Custom Permissions
+Available for enterprise accounts:
+- Granular permission control
+- Department-specific access
+- Time-limited tokens
+- IP address restrictions
 
-### Application Integration
-
-- **Website integration**: Display analytics data on your website
-- **Mobile apps**: Include analytics in mobile applications
-- **Internal tools**: Integrate with internal business tools
-- **Customer portals**: Show relevant analytics to customers
-
-### Development and Testing
-
-- **Development environments**: Test integrations in development
-- **Staging systems**: Validate implementations before production
-- **Quality assurance**: Automate testing of analytics implementations
-- **Performance monitoring**: Monitor API performance and usage
-
-## Troubleshooting
+## Troubleshooting Common Issues
 
 ### Token Not Working
 
-- **Check format**: Ensure token is copied correctly without extra spaces
-- **Verify permissions**: Confirm token has necessary permissions for your use case
-- **Test connectivity**: Verify network connectivity to SealMetrics API
-- **Check expiration**: Some tokens may have expiration dates
+#### Check Token Format
+- Ensure "Bearer " prefix in Authorization header
+- Verify no extra spaces or characters
+- Confirm token is complete (not truncated)
 
-### Common Errors
+#### Verify Permissions
+- Check if token has required permissions
+- Confirm account access is still valid
+- Verify token hasn't been revoked
 
-- **401 Unauthorized**: Token is invalid, expired, or malformed
-- **403 Forbidden**: Token lacks permissions for requested operation
-- **429 Too Many Requests**: Rate limit exceeded
-- **500 Internal Server Error**: Temporary server issue
+#### Test with Simple Call
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN" \
+     https://api.sealmetrics.com/v1/accounts
+```
 
-### Getting Help
+### Rate Limiting Issues
+- **Symptom**: 429 Too Many Requests errors
+- **Solution**: Implement exponential backoff
+- **Prevention**: Respect rate limits (100 requests/minute)
 
-- **API documentation**: Consult SealMetrics API documentation
-- **Support team**: Contact SealMetrics support with token issues
-- **Community forums**: Check community discussions for similar issues
-- **Error logs**: Review error messages and API response details
+### Permission Errors
+- **Symptom**: 403 Forbidden responses
+- **Solution**: Check token permissions
+- **Fix**: Generate new token with correct permissions
 
-## Security Considerations
+## Security Incident Response
 
-### Token Protection
+### If Token is Compromised
+1. **Immediate Action**: Revoke the compromised token
+2. **Generate New**: Create replacement token
+3. **Update Applications**: Deploy new token to applications
+4. **Monitor**: Watch for unusual API activity
+5. **Document**: Record incident for future reference
 
-- **Never commit to code**: Don't include tokens in source code repositories
-- **Environment variables**: Store tokens in environment variables
-- **Secure storage**: Use secure credential management systems
-- **Team access**: Limit who has access to API tokens
+### Revocation Process
+1. Go to API Settings in your dashboard
+2. Find the compromised token in the list
+3. Click "Revoke" or "Delete"
+4. Confirm the action
+5. Update all applications using that token
 
-### Monitoring and Auditing
+## Advanced Token Features
 
-- **Usage logs**: Monitor API token usage patterns
-- **Unusual activity**: Watch for unexpected API calls
-- **Regular audits**: Review token permissions and usage quarterly
-- **Incident response**: Have a plan for compromised tokens
+### Token Expiration
+- **Default**: Tokens don't expire automatically
+- **Custom Expiration**: Set expiration dates for enhanced security
+- **Renewal Reminders**: Get notified before expiration
+- **Auto-Renewal**: Available for enterprise accounts
 
-### Compliance
+### Usage Monitoring
+- **Request Logs**: View API request history
+- **Usage Analytics**: Monitor token usage patterns
+- **Alert System**: Get notified of unusual activity
+- **Performance Metrics**: Track API response times
 
-- **Data protection**: Ensure API usage complies with privacy regulations
-- **Access logging**: Maintain logs of API access for auditing
-- **Retention policies**: Follow data retention requirements
-- **Third-party sharing**: Control how API data is shared with third parties
+### Integration Examples
+- **Zapier**: Connect Sealmetrics to 3000+ apps
+- **Google Sheets**: Automated reporting
+- **Slack**: Analytics notifications
+- **Custom Dashboards**: Build internal tools
 
----
+Remember: Your API token provides full access to your analytics data. Treat it like a password and follow security best practices to protect your account.
 
-<Note>
-  API tokens provide full access to your analytics data. Never share tokens publicly, commit them to code repositories, or store them in unsecured locations.
-</Note>
