@@ -1,8 +1,8 @@
 {
   "name": "Sealmetrics Knowledge Base",
-  "description": "Documentación completa de Sealmetrics - La plataforma de análisis de marketing más avanzada",
+  "description": "Complete Documentation of Sealmetrics Privacy-first Analytics",
   "version": "1.0.0",
-  "baseUrl": "https://docs.sealmetrics.com",
+  "baseUrl": "https://hub.sealmetrics.com",
   "logo": {
     "light": "/logo/sealmetrics-logo-light.svg",
     "dark": "/logo/sealmetrics-logo-dark.svg",
@@ -49,22 +49,22 @@
   "sidebar": {
     "groups": [
       {
-        "group": "Introducción",
+        "group": "Introduction",
         "pages": [
           {
-            "title": "Bienvenido a Sealmetrics",
+            "title": "Welcome to Sealmetrics",
             "href": "/introduction",
-            "description": "Guía completa para comenzar con Sealmetrics"
+            "description": "Guide to start with Sealmetrics"
           }
         ]
       },
       {
-        "group": "Primeros Pasos",
+        "group": "First Steps",
         "pages": [
           {
-            "title": "Introducción",
+            "title": "Introduction",
             "href": "/Getting-Started/introduction",
-            "description": "Conceptos básicos de Sealmetrics"
+            "description": "Basic Concepts"
           },
           {
             "title": "Primeros Pasos",
