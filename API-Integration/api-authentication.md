@@ -1,6 +1,6 @@
 ---
-title: "Autenticación de la API de Sealmetrics"
-description: "Aprende cómo autenticarte correctamente con la API de Sealmetrics usando tokens y claves. Guía completa de seguridad y mejores prácticas."
+title: "Sealmetrics API Authentication"
+description: "Learn how to securely authenticate with the Sealmetrics API using tokens and keys. Complete security guide and best practices."
 keywords: ['authentication', 'api token', 'security', 'api key', 'authorization', 'sealmetrics api', 'bearer token']
 ---
 
