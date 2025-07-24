@@ -6,8 +6,8 @@
   },
   "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0066cc",
-    "light": "#3399ff",
+    "primary": "#00B25F",
+    "light": "#00B260",
     "dark": "#004499"
   },
   "topbarLinks": [
