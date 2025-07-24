@@ -1,0 +1,193 @@
+---
+title: "How to Track AJAX Forms with SealMetrics"
+description: "AJAX forms submit data without reloading the page, making them popular for modern web applications. This guide explains how to properly track AJAX form submissions as conversions in SealMetrics."
+---
+
+## Prerequisites
+
+- SealMetrics tracking pixel installed on all website pages
+- Basic understanding of JavaScript and form handling
+- Access to your website's code or tag management system
+
+## Implementation Steps
+
+### Step 1: Install Base Tracking
+
+Ensure the SealMetrics tracking pixel is installed on all pages of your website where the AJAX form appears.
+
+### Step 2: Add Conversion Tracking Code
+
+When a user successfully submits an AJAX form, trigger this conversion tracking code:
+
+```
+<script>
+/* SealMetrics Tracker Code */
+var oSm = window.oSm || {};
+oSm.account = 'XXXXXXXXXXXXXXXXXXXXX'; // Replace with your account ID
+oSm.decore = 1;
+oSm.event = 'conversion';
+oSm.label = 'form-lead'; // Customize this label
+!function(e){
+    var t="//app.sealmetrics.com/tag/tracker";
+    window.oSm=oSm,
+    window.smTrackerLoaded?
+        sm.tracker.track(e.event):
+        Promise.all([new Promise(function(e){
+            var n=document.createElement("script");
+            n.src=t,
+            n.async=!0,
+            n.onload=function(){e(t)},
+            document.getElementsByTagName("head")[0].appendChild(n)
+        })]).then(function(){
+            sm.tracker.track(e.event)
+        })
+}(oSm);
+/* End SealMetrics Tracker Code */
+</script>
+```
+
+### Step 3: Integration with AJAX Form
+
+Integrate the tracking code with your AJAX form's success callback:
+
+```
+// Example jQuery AJAX form submission
+$('#contact-form').submit(function(e) {
+    e.preventDefault();
+    
+    $.ajax({
+        url: '/submit-form',
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function(response) {
+            // Form submitted successfully
+            // Trigger SealMetrics conversion tracking
+            var oSm = window.oSm || {};
+            oSm.account = 'YOUR_ACCOUNT_ID';
+            oSm.decore = 1;
+            oSm.event = 'conversion';
+            oSm.label = 'contact-form';
+            // ... rest of tracking code
+            
+            // Show success message
+            alert('Thank you for your submission!');
+        },
+        error: function() {
+            alert('There was an error submitting the form.');
+        }
+    });
+});
+```
+
+## Customization Options
+
+### Event Labels
+
+Customize the `oSm.label` parameter to differentiate between different forms:
+
+- `'contact-form'` - Contact page forms
+- `'newsletter-signup'` - Email subscription forms
+- `'demo-request'` - Demo request forms
+- `'quote-request'` - Quote request forms
+
+### Advanced Parameters
+
+You can add additional parameters for more detailed tracking:
+
+```
+oSm.value = 100; // Conversion value (optional)
+oSm.currency = 'USD'; // Currency code (optional)
+oSm.custom_data = 'additional-info'; // Custom tracking data (optional)
+```
+
+## Best Practices
+
+### 1. Timing
+
+- Only fire the conversion tracking after confirming successful form submission
+- Avoid tracking on form validation errors or incomplete submissions
+
+### 2. Deduplication
+
+- Implement logic to prevent double-tracking if users interact with the form multiple times
+- Consider using session storage to track already converted forms
+
+### 3. Testing
+
+- Test form submissions in different browsers
+- Verify conversions appear in your SealMetrics dashboard
+- Use browser developer tools to confirm the tracking pixel fires correctly
+
+### 4. Error Handling
+
+- Implement fallback tracking methods
+- Monitor for JavaScript errors that might prevent tracking
+
+## Common Implementation Patterns
+
+### Vanilla JavaScript
+
+```
+document.getElementById('myForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    fetch('/submit', {
+        method: 'POST',
+        body: new FormData(this)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Trigger SealMetrics tracking
+            // ... tracking code here
+        }
+    });
+});
+```
+
+### React.js
+
+```
+const handleSubmit = async (formData) => {
+    try {
+        const response = await fetch('/api/submit', {
+            method: 'POST',
+            body: JSON.stringify(formData)
+        });
+        
+        if (response.ok) {
+            // Trigger SealMetrics tracking
+            window.oSm = {
+                account: 'YOUR_ACCOUNT_ID',
+                decore: 1,
+                event: 'conversion',
+                label: 'react-form'
+            };
+            // ... rest of tracking code
+        }
+    } catch (error) {
+        console.error('Form submission error:', error);
+    }
+};
+```
+
+## Troubleshooting
+
+### Conversion Not Appearing
+
+1. Check that the account ID is correct
+2. Verify the tracking code executes after successful form submission
+3. Ensure no JavaScript errors are blocking execution
+4. Confirm the form actually submits successfully
+
+### Multiple Conversions for Single Submission
+
+1. Implement deduplication logic
+2. Check that tracking code isn't called multiple times
+3. Verify form submission handlers aren't duplicated
+
+### Tracking Code Errors
+
+1. Ensure proper script loading order
+2. Check for JavaScript conflicts with other scripts
+3. Verify network connectivity to SealMetrics servers
